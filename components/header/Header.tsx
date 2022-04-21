@@ -65,4 +65,30 @@ const LinkMenu = styled.a`
   color: #ffffff;
   font-family: fantasy;
   margin: 20px 0;
+  letter-spacing: 0;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    letter-spacing: 5px;
+  }
+
+  &:after {
+    backface-visibility: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    bottom: 0px;
+    content: ' ';
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+  }
+
+  &:hover:after {
+    backface-visibility: hidden;
+    border-color: #fff;
+    transition: width 350ms ease-in-out;
+    width: 80%;
+  }
 `;
