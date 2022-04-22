@@ -56,7 +56,7 @@ const Logo = styled.a`
 const LinkContainer = styled.div`
   display: flex;
   flex-flow: column;
-  width: 100%;
+  width: 70%;
   margin-top: 370px;
 `;
 
@@ -67,11 +67,6 @@ const LinkMenu = styled.a`
   margin: 20px 0;
   letter-spacing: 0;
   cursor: pointer;
-
-  &:hover,
-  &:active {
-    letter-spacing: 5px;
-  }
 
   &:after {
     backface-visibility: hidden;
@@ -89,6 +84,6 @@ const LinkMenu = styled.a`
     backface-visibility: hidden;
     border-color: #fff;
     transition: width 350ms ease-in-out;
-    width: 80%;
+    width: 100%;
   }
 `;
