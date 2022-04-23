@@ -16,10 +16,10 @@ const Header = () => {
           <Link href="/">
             <LinkMenu>Introduce</LinkMenu>
           </Link>
-          <Link href="/">
+          <Link href="/posts">
             <LinkMenu>Posts</LinkMenu>
           </Link>
-          <Link href="/">
+          <Link href="/plan">
             <LinkMenu>Plan</LinkMenu>
           </Link>
         </LinkContainer>
@@ -31,15 +31,21 @@ const Header = () => {
 export default Header;
 
 const Container = styled.div`
+  display: block;
   position: fixed;
-  width: 200px;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 23%;
+  min-width: 320px;
   height: 100%;
+  min-height: 100%;
   background: #1e1e1e;
 `;
 
 const ContentContainer = styled.div`
   dispaly: flex;
-  padding: 25px 0 0 20px;
+  padding: 35px 0 0 30px;
 `;
 
 const LogoContainer = styled.div`
@@ -57,7 +63,7 @@ const LinkContainer = styled.div`
   display: flex;
   flex-flow: column;
   width: 70%;
-  margin-top: 370px;
+  margin-top: 350px;
 `;
 
 const LinkMenu = styled.a`
