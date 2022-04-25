@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import styled from 'styled-components';
 
 //components
 import MainPage from '../components/templetes/MainPageTemplate';
+
 const Home: NextPage = () => {
   return (
     <>
@@ -12,5 +12,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-const Container = styled.div``;

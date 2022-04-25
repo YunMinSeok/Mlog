@@ -54,9 +54,10 @@ const LogoContainer = styled.div`
 `;
 
 const Logo = styled.a`
-  font-size: 30px;
+  font-size: 40px;
   color: #ffffff;
-  font-family: fantasy;
+  font-family: monospace;
+  font-weight: bold;
 `;
 
 const LinkContainer = styled.div`
@@ -69,7 +70,7 @@ const LinkContainer = styled.div`
 const LinkMenu = styled.a`
   font-size: 25px;
   color: #ffffff;
-  font-family: fantasy;
+  font-family: monospace;
   margin: 20px 0;
   letter-spacing: 0;
   cursor: pointer;
