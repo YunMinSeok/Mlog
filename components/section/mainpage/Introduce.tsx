@@ -32,7 +32,7 @@ export default Introduce;
 const Container = styled.div`
   display: flex;
   margin: 0 auto;
-  padding: 20px 50px;
+  padding: 20px 60px;
   height: 100vh;
   background-color: #121212;
   align-items: center;

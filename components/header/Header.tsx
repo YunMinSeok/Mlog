@@ -64,7 +64,7 @@ const LinkContainer = styled.div`
   display: flex;
   flex-flow: column;
   width: 70%;
-  margin-top: 350px;
+  margin-top: 320px;
 `;
 
 const LinkMenu = styled.a`
