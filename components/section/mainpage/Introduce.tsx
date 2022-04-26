@@ -2,12 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-// const myLoader = ({ src, width }) => {
-//   const relativeSrc = (src) => src.split("/").pop();
-
-//   return `https://example.com/${src}?w=${width}/${relativeSrc(src)}`;
-// };
-
 const Introduce = () => {
   return (
     <Container>
@@ -20,7 +14,6 @@ const Introduce = () => {
       </ContentBox>
       <InrtoduceImgBox>
         <Image
-          // loader={myLoader}
           src={'/Introduce.png'}
           alt="Introduce_Logo"
           width={400}
