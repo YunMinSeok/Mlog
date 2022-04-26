@@ -2,9 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-//images
-import introduceLogo from '/introduceLogo.png';
-
 const Introduce = () => {
   return (
     <Container>
@@ -17,7 +14,7 @@ const Introduce = () => {
       </ContentBox>
       <InrtoduceImgBox>
         <Image
-          src="/Introduce.png"
+          src={process.env.BACKEND_URL + '/Introduce.png'}
           alt="Introduce_Logo"
           width={400}
           height={400}
