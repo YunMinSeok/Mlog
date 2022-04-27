@@ -43,6 +43,7 @@ const ContentSection = styled.div`
   flex: 1;
   flex-direction: column;
   text-align: center;
+  color: #fff;
 `;
 const InrtoduceImgBox = styled.div`
   display: flex;
@@ -54,7 +55,6 @@ const InrtoduceImgBox = styled.div`
 `;
 
 const ContentBox = styled.div`
-  color: #fff;
   & > h1 {
     margin-bottom: 20px;
     font-size: 17px;
