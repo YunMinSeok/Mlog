@@ -30,7 +30,7 @@ const Header = () => {
 
 export default Header;
 
-const Container = styled.div`
+const Container = styled.header`
   display: block;
   position: fixed;
   left: 0;

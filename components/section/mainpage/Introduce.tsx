@@ -26,7 +26,7 @@ const Introduce = () => {
 
 export default Introduce;
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   margin: 0 auto;
   padding: 20px 60px;
