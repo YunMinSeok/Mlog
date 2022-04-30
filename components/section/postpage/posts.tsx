@@ -1,7 +1,7 @@
-import React from 'react';
 import Image from 'next/image';
-import styled from 'styled-components';
 import Link from 'next/link';
+import React from 'react';
+import styled from 'styled-components';
 
 const Posts = () => {
   return (
@@ -11,7 +11,7 @@ const Posts = () => {
           <Link href="/posts/1">
             <LinkBox>
               <ThumnailContent>
-                <Thumnail src={'/image.jpeg'} />
+                <Thumnail src={'/image.jpeg'} alt="post_image" layout="fill" />
               </ThumnailContent>
             </LinkBox>
           </Link>
@@ -78,7 +78,7 @@ const ThumnailContent = styled.div`
   padding-top: 52.19206680584551%;
 `;
 
-const Thumnail = styled.img`
+const Thumnail = styled(Image)`
   position: absolute;
   top: 0px;
   left: 0px;
