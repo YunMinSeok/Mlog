@@ -8,8 +8,8 @@ const Introduce = () => {
       <ContentBox>
         <p>
           <span>This page is my develop blog. </span>
-          <span>I usally use typescript, react, redux.</span>
-          <span>thanks for look</span>
+          <span>I usally use Typescript, React, Redux.</span>
+          <span>Thanks for look</span>
         </p>
       </ContentBox>
       <InrtoduceImgBox>
