@@ -57,6 +57,7 @@ const Logo = styled.a`
   color: #ffffff;
   font-family: monospace;
   font-weight: bold;
+  cursor: pointer;
 `;
 
 const LinkContainer = styled.div`
