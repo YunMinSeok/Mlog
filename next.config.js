@@ -8,13 +8,4 @@ module.exports = {
     path: 'https://yoonminseok.github.io/Mlog',
   },
   basePath: '/Mlog',
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/Mlog',
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
 };
