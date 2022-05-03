@@ -23,6 +23,22 @@ const Index = () => {
 
   const [translateValue, setTranslateValue] = useState<number>(0);
 
+  const moveRight = (): void => {
+    if (translateValue !== 70 * (images.length - 1)) {
+      setTranslateValue((prev) => prev + 70);
+    } else {
+      setTranslateValue(0);
+    }
+  };
+
+  const moveLeft = (): void => {
+    if (translateValue !== 0) {
+      setTranslateValue((prev) => prev - 70);
+    } else {
+      setTranslateValue(70 * (images.length - 1));
+    }
+  };
+
   return (
     <Container>
       <Slider />
