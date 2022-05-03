@@ -8,7 +8,7 @@ const Posts = () => {
     <Container>
       <PostWrap>
         <PostBox>
-          <Link href="/posts/1">
+          <Link href="/posts/slider">
             <LinkBox>
               <ThumnailContent>
                 <Thumnail src={'/image.jpeg'} alt="post_image" layout="fill" />
@@ -16,7 +16,7 @@ const Posts = () => {
             </LinkBox>
           </Link>
           <ContentBox>
-            <Link href="/posts/1">
+            <Link href="/posts/slider">
               <LinkBox>
                 <ContentH4>블로그 첫 글</ContentH4>
                 <ContentDescription>
@@ -54,7 +54,7 @@ const PostWrap = styled.div`
 `;
 
 const PostBox = styled.div`
-  width: 20rem;
+  width: 18rem;
   background: #1e1e1e;
   border-radius: 4px;
   box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
