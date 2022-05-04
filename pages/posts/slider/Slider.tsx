@@ -1,8 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Slider = () => {
-  return <Container></Container>;
+type SliderProps = {
+  translateValue: number;
+  images: { pic: string; id: number }[];
+  moveRight: () => void;
+  moveLeft: () => void;
+};
+
+const Slider: React.FC<SliderProps> ={
+  translateValue,
+  images,
+  moveRight,
+  moveLeft,
+})=> {
+  return (<Container>
+    
+    </Container>);
 };
 
 export default Slider;
