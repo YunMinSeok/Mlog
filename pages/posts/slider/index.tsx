@@ -14,11 +14,11 @@ import SliderDot from './SliderDot';
 
 const Index = () => {
   const images = [
-    { pic: img1, id: 1 },
-    { pic: img2, id: 2 },
-    { pic: img3, id: 3 },
-    { pic: img4, id: 4 },
-    { pic: img5, id: 5 },
+    { pic: '/SliderImage1.jpeg', id: 1 },
+    { pic: '/SliderImage2.jpeg', id: 2 },
+    { pic: '/SliderImage3.jpeg', id: 3 },
+    { pic: '/SliderImage4.jpeg', id: 4 },
+    { pic: '/SliderImage5.jpeg', id: 5 },
   ];
 
   const [translateValue, setTranslateValue] = useState<number>(0);
@@ -41,7 +41,12 @@ const Index = () => {
 
   return (
     <Container>
-      <Slider />
+      <Slider
+        translateValue={translateValue}
+        images={images}
+        moveRight={moveRight}
+        moveLeft={moveLeft}
+      />
       <SliderDot />
     </Container>
   );

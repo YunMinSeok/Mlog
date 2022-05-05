@@ -8,15 +8,20 @@ type SliderProps = {
   moveLeft: () => void;
 };
 
-const Slider: React.FC<SliderProps> ={
+const Slider: React.FC<SliderProps> = ({
   translateValue,
   images,
   moveRight,
   moveLeft,
-})=> {
-  return (<Container>
-    
-    </Container>);
+}) => {
+  const clickRight = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
+    moveRight();
+  };
+  const clickLeft = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
+    moveLeft();
+  };
+
+  return <Container></Container>;
 };
 
 export default Slider;
