@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 //components
 import Slider from '../../../components/section/postpage/slider/Slider';
-import SliderDot from '../../../components/section/postpage/slider/SliderDot';
 
 const Index = () => {
   const images = [
@@ -39,11 +38,6 @@ const Index = () => {
         images={images}
         moveRight={moveRight}
         moveLeft={moveLeft}
-      />
-      <SliderDot
-        translateValue={translateValue}
-        images={images}
-        moveRight={moveRight}
       />
     </Container>
   );
