@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 type SliderProps = {
   translateValue: number;
@@ -15,68 +15,92 @@ const Slider: React.FC<SliderProps> = ({
   moveRight,
   moveLeft,
 }) => {
+  const [mouseDownClientX, setMouseDownClientX] = useState<number>(0);
+  const [mouseUpClientX, setMouseUpClientX] = useState<number>(0);
+  const [cursorOn, setCursorOn] = useState<boolean>(false);
+
   const clickRight = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-    console.log(1);
     moveRight();
   };
   const clickLeft = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-    console.log(2);
     moveLeft();
   };
 
+  const onMouseDown = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
+    setMouseDownClientX(e.clientX);
+    setCursorOn(true);
+  };
+
+  const onMouseUp = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
+    setMouseUpClientX(e.clientX);
+    setCursorOn(false);
+  };
+
+  useEffect(() => {
+    const dragSpace = Math.abs(mouseDownClientX - mouseUpClientX);
+    console.log(dragSpace);
+    if (mouseDownClientX !== 0) {
+      if (mouseUpClientX < mouseDownClientX && dragSpace > 100) {
+        moveRight();
+      } else if (mouseUpClientX > mouseDownClientX && dragSpace > 100) {
+        moveLeft();
+      }
+    }
+  }, [mouseUpClientX]);
+
   return (
-    <Container>
-      <SliderBox>
-        <ImageBox translateValue={translateValue !== 0 ? translateValue : null}>
-          {images.map((picture, idx) => {
-            return (
-              <SliderImage
-                key={picture.id}
-                src={picture.pic}
-                alt={'background' + idx}
-                width={400}
-                height={400}
-              />
-            );
-          })}
-        </ImageBox>
-        <PrevArrowBox>
-          <PrevArrow
-            onClick={clickLeft}
-            src={'/arrow.png'}
-            alt={'arrow'}
-            width={50}
-            height={50}
-          />
-        </PrevArrowBox>
-        <NextArrowBox>
-          <NextArrow
-            onClick={clickRight}
-            src={'/arrow.png'}
-            alt={'arrow'}
-            width={50}
-            height={50}
-          />
-        </NextArrowBox>
-      </SliderBox>
-    </Container>
+    <SliderBox
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      cursorOn={cursorOn}
+    >
+      <ImageBox translateValue={translateValue !== 0 ? translateValue : null}>
+        {images.map((picture, idx) => {
+          return (
+            <SliderImage
+              key={picture.id}
+              src={picture.pic}
+              alt={'background' + idx}
+            />
+          );
+        })}
+      </ImageBox>
+      <PrevArrowBox>
+        <PrevArrow
+          onClick={clickLeft}
+          src={'/arrow.png'}
+          alt={'arrow'}
+          width={50}
+          height={50}
+        />
+      </PrevArrowBox>
+      <NextArrowBox>
+        <NextArrow
+          onClick={clickRight}
+          src={'/arrow.png'}
+          alt={'arrow'}
+          width={50}
+          height={50}
+        />
+      </NextArrowBox>
+    </SliderBox>
   );
 };
 
 export default Slider;
 
-const Container = styled.section`
-  height: 100vh;
-  padding: 50px;
-  background-color: #121212;
-`;
-const SliderBox = styled.div`
+type SliderBoxProps = {
+  cursorOn: boolean;
+};
+
+const SliderBox = styled.div<SliderBoxProps>`
   position: relative;
   display: flex;
   margin: 0 auto;
   max-width: 70vw;
   height: 500px;
   overflow: hidden;
+  cursor: ${({ cursorOn }) => cursorOn && 'pointer'};
 `;
 
 type ImageBoxProps = {

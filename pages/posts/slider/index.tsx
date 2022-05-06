@@ -40,7 +40,11 @@ const Index = () => {
         moveRight={moveRight}
         moveLeft={moveLeft}
       />
-      <SliderDot />
+      <SliderDot
+        translateValue={translateValue}
+        images={images}
+        moveRight={moveRight}
+      />
     </Container>
   );
 };
@@ -48,6 +52,8 @@ const Index = () => {
 export default Index;
 
 const Container = styled.section`
+  position: relative;
   height: 100vh;
   background-color: #121212;
+  padding: 50px;
 `;
