@@ -36,7 +36,6 @@ const Slider: React.FC<SliderProps> = ({
                 alt={'background' + idx}
                 width={400}
                 height={400}
-                layout="fill"
               />
             );
           })}
@@ -75,7 +74,7 @@ const SliderBox = styled.div`
   position: relative;
   display: flex;
   margin: 0 auto;
-  width: 70vw;
+  max-width: 70vw;
   height: 500px;
   overflow: hidden;
 `;
@@ -85,16 +84,15 @@ type ImageBoxProps = {
 };
 
 const ImageBox = styled.div<ImageBoxProps>`
-  position: relative;
   display: flex;
-  width: 70vw;
   transition: 1s;
-  flex-direction: row;
   transform: ${({ translateValue }) => `translateX(-${translateValue}vw)`};
 `;
 
-const SliderImage = styled(Image)`
-  position: relative;
+const SliderImage = styled.img`
+  width: 70vw;
+  object-fit: cover;
+  object-position: center center;
 `;
 
 const PrevArrowBox = styled.div`

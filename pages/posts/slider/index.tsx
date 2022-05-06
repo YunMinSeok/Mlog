@@ -7,11 +7,11 @@ import SliderDot from '../../../components/section/postpage/slider/SliderDot';
 
 const Index = () => {
   const images = [
-    { pic: '/SliderImage1.jpeg', id: 1 },
-    { pic: '/SliderImage2.jpeg', id: 2 },
-    { pic: '/SliderImage3.jpeg', id: 3 },
-    { pic: '/SliderImage4.jpeg', id: 4 },
-    { pic: '/SliderImage5.jpeg', id: 5 },
+    { pic: '/Mlog/SliderImage1.jpeg', id: 1 },
+    { pic: '/Mlog/SliderImage2.jpeg', id: 2 },
+    { pic: '/Mlog/SliderImage3.jpeg', id: 3 },
+    { pic: '/Mlog/SliderImage4.jpeg', id: 4 },
+    { pic: '/Mlog/SliderImage5.jpeg', id: 5 },
   ];
 
   const [translateValue, setTranslateValue] = useState<number>(0);
