@@ -11,7 +11,11 @@ const Posts = () => {
           <Link href="/posts/slider">
             <LinkBox>
               <ThumnailContent>
-                <Thumnail src={'/image.jpeg'} alt="post_image" layout="fill" />
+                <Thumnail
+                  src={'/SliderImage1.jpeg'}
+                  alt="post_image"
+                  layout="fill"
+                />
               </ThumnailContent>
             </LinkBox>
           </Link>
