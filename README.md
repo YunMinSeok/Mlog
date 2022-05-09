@@ -1,4 +1,5 @@
 NextJS + TypeScript + styled-component
+
 Auto Deploy = GithubAction + gh-pages
 
 를 이용해서 만든 블로그 이며 만들고 싶은 것들 만들어서 올리는 곳입니다.
