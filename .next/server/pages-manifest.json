@@ -1,7 +1,11 @@
 {
+  "/404": "pages/404.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/": "pages/index.js",
-  "/404": "pages/404.js"
+  "/plan": "pages/plan.js",
+  "/posts": "pages/posts.js",
+  "/posts/slider/index.style": "pages/posts/slider/index.style.js",
+  "/posts/slider": "pages/posts/slider.js"
 }
