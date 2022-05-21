@@ -1,9 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 
 //components
 import Slider from '../../../components/section/postpage/slider/Slider';
-//styled
-import * as Styled from './index.style';
 
 const Index = () => {
   const images = [
@@ -15,10 +14,17 @@ const Index = () => {
   ];
 
   return (
-    <Styled.Container>
+    <Container>
       <Slider images={images} />
-    </Styled.Container>
+    </Container>
   );
 };
 
 export default Index;
+
+export const Container = styled.section`
+  position: relative;
+  height: 100vh;
+  background-color: #121212;
+  padding: 50px;
+`;
