@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "homepage": "https://yoonminseok.github.io/Mlog",
+    "homepage": "https://yunminseok.github.io/Mlog",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

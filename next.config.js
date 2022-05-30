@@ -1,11 +1,11 @@
 module.exports = {
   assetPrefix:
     process.env.NODE_ENV === 'production'
-      ? 'https://yoonminseok.github.io/Mlog'
+      ? 'https://yunminseok.github.io/Mlog'
       : '',
   images: {
     loader: 'imgix',
-    path: 'https://yoonminseok.github.io/Mlog',
+    path: 'https://yunminseok.github.io/Mlog',
   },
   basePath: '/Mlog',
 };
