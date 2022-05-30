@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 //styled
@@ -8,6 +9,7 @@ type SliderProps = {
 };
 
 const Slider: React.FC<SliderProps> = ({ images }) => {
+  const router = useRouter();
   const imageSize = images.length;
   const moreSlide = 1;
 
@@ -104,6 +106,13 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   return (
     <>
+      <Styled.BackButton
+        onClick={() => router.back()}
+        src={'/arrow.png'}
+        alt={'arrow'}
+        width={50}
+        height={50}
+      />
       <Styled.SliderBox
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}

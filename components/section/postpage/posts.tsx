@@ -22,14 +22,10 @@ const Posts = () => {
           <ContentBox>
             <Link href="/posts/slider">
               <LinkBox>
-                <ContentH4>블로그 첫 글</ContentH4>
+                <ContentH4>Infinite carousel slider</ContentH4>
                 <ContentDescription>
                   <ContentDescriptionP>
-                    저는 안드로이드 개발을 시작한 지 1년 정도 된 주니어
-                    개발자입니다. 주니어 개발자(3년 이하)의 개발자는 개발 커리어
-                    성장 욕구가 강한 개발자라고 합니다. 그러나 학교나 학원 등
-                    다양한 방법을 통해 이론을 공부하더라고 이를 실제
-                    프로젝트에서 적용할 기회는 흔치 않았습
+                    TypeScript를 이용해서 만든 무한 슬라이드
                   </ContentDescriptionP>
                 </ContentDescription>
               </LinkBox>
