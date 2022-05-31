@@ -20,6 +20,6 @@ const Container = styled.div`
   position: relative;
   min-width: 884px;
   min-height: 100%;
-  padding-left: 23%;
+  padding-left: 320px;
   height: auto !important;
 `;

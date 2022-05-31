@@ -35,8 +35,7 @@ const Container = styled.header`
   left: 0;
   top: 0;
   z-index: 10;
-  width: 23%;
-  min-width: 320px;
+  width: 320px;
   height: 100%;
   min-height: 100%;
   background: #1e1e1e;
