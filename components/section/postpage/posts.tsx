@@ -3,44 +3,75 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
+//data
+import { postData } from '../../../data/PostData';
+
 const Posts = () => {
   return (
     <Container>
       <PostWrap>
-        <PostBox>
-          <Link href="/posts/slider">
-            <LinkBox>
-              <ThumnailContent>
-                <Thumnail
-                  src={'/SliderImage1.jpeg'}
-                  alt="post_image"
-                  layout="fill"
-                />
-              </ThumnailContent>
-            </LinkBox>
-          </Link>
-          <ContentBox>
-            <Link href="/posts/slider">
-              <LinkBox>
-                <ContentH4>Infinite carousel slider</ContentH4>
-                <ContentDescription>
-                  <ContentDescriptionP>
-                    TypeScript를 이용해서 만든 무한 슬라이드
-                  </ContentDescriptionP>
-                </ContentDescription>
-              </LinkBox>
-            </Link>
-            <SubInfo>
-              <span>2022년 4월 28일</span>
-            </SubInfo>
-          </ContentBox>
-        </PostBox>
+        {postData.map((item) => {
+          return (
+            <PostBox key={item.id}>
+              <Link href={item.link}>
+                <LinkBox>
+                  <ThumnailContent>
+                    <Thumnail src={item.image} alt="post_image" layout="fill" />
+                  </ThumnailContent>
+                </LinkBox>
+              </Link>
+              <ContentBox>
+                <Link href={item.link}>
+                  <LinkBox>
+                    <ContentH4>{item.title}</ContentH4>
+                    <ContentDescription>
+                      <ContentDescriptionP>{item.content}</ContentDescriptionP>
+                    </ContentDescription>
+                  </LinkBox>
+                </Link>
+                <SubInfo>
+                  <span>{item.date}</span>
+                </SubInfo>
+              </ContentBox>
+            </PostBox>
+          );
+        })}
       </PostWrap>
     </Container>
   );
 };
 
 export default Posts;
+{
+  /* <PostBox>
+  <Link href="/posts/slider">
+    <LinkBox>
+      <ThumnailContent>
+        <Thumnail
+          src={'/SliderImage1.jpeg'}
+          alt="post_image"
+          layout="fill"
+        />
+      </ThumnailContent>
+    </LinkBox>
+  </Link>
+  <ContentBox>
+    <Link href="/posts/slider">
+      <LinkBox>ß
+        <ContentH4>Infinite carousel slider</ContentH4>
+        <ContentDescription>
+          <ContentDescriptionP>
+            TypeScript를 이용해서 만든 무한 자동 슬라이드
+          </ContentDescriptionP>
+        </ContentDescription>
+      </LinkBox>ß
+    </Link>
+    <SubInfo>
+      <span>2022년 4월 28일</span>
+    </SubInfo>
+  </ContentBox>
+</PostBox> */
+}
 
 const Container = styled.section`
   height: 100vh;
