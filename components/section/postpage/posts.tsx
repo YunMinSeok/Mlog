@@ -42,36 +42,6 @@ const Posts = () => {
 };
 
 export default Posts;
-{
-  /* <PostBox>
-  <Link href="/posts/slider">
-    <LinkBox>
-      <ThumnailContent>
-        <Thumnail
-          src={'/SliderImage1.jpeg'}
-          alt="post_image"
-          layout="fill"
-        />
-      </ThumnailContent>
-    </LinkBox>
-  </Link>
-  <ContentBox>
-    <Link href="/posts/slider">
-      <LinkBox>ß
-        <ContentH4>Infinite carousel slider</ContentH4>
-        <ContentDescription>
-          <ContentDescriptionP>
-            TypeScript를 이용해서 만든 무한 자동 슬라이드
-          </ContentDescriptionP>
-        </ContentDescription>
-      </LinkBox>ß
-    </Link>
-    <SubInfo>
-      <span>2022년 4월 28일</span>
-    </SubInfo>
-  </ContentBox>
-</PostBox> */
-}
 
 const Container = styled.section`
   height: 100vh;
