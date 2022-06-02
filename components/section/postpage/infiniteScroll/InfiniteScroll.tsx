@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
 
@@ -5,6 +6,7 @@ import ReactLoading from 'react-loading';
 import * as Styled from './InfiniteScroll.style';
 
 const InfiniteScroll = () => {
+  const router = useRouter();
   const [itemList, setItemList] = useState<number[]>([
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
   ]);
@@ -44,6 +46,13 @@ const InfiniteScroll = () => {
 
   return (
     <>
+      <Styled.BackButton
+        onClick={() => router.back()}
+        src={'/arrow.png'}
+        alt={'arrow'}
+        width={50}
+        height={50}
+      />
       <Styled.ItemWrap>
         {itemList.map((item: number, index: number) => {
           return <Styled.Item>{index + 1}</Styled.Item>;
