@@ -10,7 +10,7 @@ export const postData = [
   {
     id: 'slider_post',
     link: '/posts/infiniteScroll',
-    image: '/SliderImage1.jpeg',
+    image: '/InfiniteScroll.png',
     title: 'Infinite reverse scroll',
     content: 'Intersection Observer를 이용한 역무한 스크롤',
     date: '2022년 5월 31일',
