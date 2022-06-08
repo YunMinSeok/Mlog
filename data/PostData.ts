@@ -8,11 +8,11 @@ export const postData = [
     date: '2022년 4월 28일',
   },
   {
-    id: 'slider_post',
+    id: 'infiniteScroll_post',
     link: '/posts/infiniteScroll',
     image: '/InfiniteScroll.png',
     title: 'Infinite reverse scroll',
-    content: 'Intersection Observer를 이용한 역무한 스크롤',
+    content: 'Intersection Observer를 이용한 무한 스크롤',
     date: '2022년 5월 31일',
   },
 ];
