@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 //styled
 import * as Styled from './DebounceStyle';
@@ -9,16 +9,53 @@ const Debounce = () => {
 
   //일반 change 함수
   const [normalValue, setNormalValue] = useState<string>('');
-  //debounce change 함수
-  const [debounceValue, setDebounceValue] = useState<string>('');
 
+  //일반 input change
   const normalChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNormalValue(e.currentTarget.value);
   };
 
-  const debounceChange = (e: React.FormEvent<HTMLInputElement>) => {
-    setNormalValue(e.currentTarget.value);
+  //debounce change 함수
+  const [debounceValue, setDebounceValue] = useState<string>('');
+  const [debounceResultValue, setDebounceResulValue] = useState<string>('');
+
+  //디바운스 시간 처리 및 변수 처리
+  const debouncedSearchTerm = useDebounce(debounceValue, 500);
+
+  //useDebounce 함수
+  function useDebounce(value: string, delay: number) {
+    const [debouncedValue, setDebouncedValue] = useState(value);
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        setDebouncedValue(value);
+      }, delay);
+
+      return () => {
+        clearTimeout(handler);
+      };
+    }, [value, delay]);
+
+    return debouncedValue;
+  }
+
+  //대리점 실시간 검색 값 (키업)
+  const debounceValueChange = (searchValue: string) => {
+    setDebounceResulValue(searchValue);
   };
+
+  //키업 이벤트
+  const debounceChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setDebounceValue(e.currentTarget.value);
+  };
+
+  //검색 debounce 처리
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      debounceValueChange(debouncedSearchTerm);
+    } else {
+      setDebounceResulValue('');
+    }
+  }, [debouncedSearchTerm]);
 
   return (
     <>
@@ -46,7 +83,7 @@ const Debounce = () => {
             value={debounceValue}
             onChange={debounceChange}
           />
-          <p>Debounce: {debounceValue}</p>
+          <p>Debounce: {debounceResultValue}</p>
         </Styled.InputWrap>
       </Styled.Wrap>
     </>
