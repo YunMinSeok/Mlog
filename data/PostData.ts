@@ -15,4 +15,12 @@ export const postData = [
     content: 'Intersection Observer를 이용한 무한 스크롤',
     date: '2022년 5월 31일',
   },
+  {
+    id: 'debounce_post',
+    link: '/posts/debounce',
+    image: '/InfiniteScroll.png',
+    title: 'Input Debounce',
+    content: 'debounce을 이용한 성능 향상 공부',
+    date: '2022년 6월 11일',
+  },
 ];

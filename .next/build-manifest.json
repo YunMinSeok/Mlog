@@ -15,6 +15,11 @@
     "static/development/_middlewareManifest.js"
   ],
   "pages": {
+    "/404": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/404.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -30,10 +35,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/posts.js"
     ],
-    "/posts/infiniteScroll": [
+    "/posts/debounce": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/posts/infiniteScroll.js"
+      "static/chunks/pages/posts/debounce.js"
     ]
   },
   "ampFirstPages": []
