@@ -19,6 +19,14 @@ const Debounce = () => {
   const [debounceValue, setDebounceValue] = useState<string>('');
   const [debounceResultValue, setDebounceResulValue] = useState<string>('');
 
+  //키업 이벤트
+  const debounceChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setDebounceValue(e.currentTarget.value);
+  };
+  //debounce 처리된 input 값
+  const debounceValueChange = (searchValue: string) => {
+    setDebounceResulValue(searchValue);
+  };
   //디바운스 시간 처리 및 변수 처리
   const debouncedSearchTerm = useDebounce(debounceValue, 500);
 
@@ -37,16 +45,6 @@ const Debounce = () => {
 
     return debouncedValue;
   }
-
-  //대리점 실시간 검색 값 (키업)
-  const debounceValueChange = (searchValue: string) => {
-    setDebounceResulValue(searchValue);
-  };
-
-  //키업 이벤트
-  const debounceChange = (e: React.FormEvent<HTMLInputElement>) => {
-    setDebounceValue(e.currentTarget.value);
-  };
 
   //검색 debounce 처리
   useEffect(() => {
