@@ -8,5 +8,19 @@ export const BackButton = styled(Image)`
 `;
 
 export const Wrap = styled.div`
+  padding: 50px;
   color: white;
+`;
+
+export const InputWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+`;
+
+export const SearchInput = styled.input`
+  background: white;
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
 `;

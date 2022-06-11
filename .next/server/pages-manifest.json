@@ -1,12 +1,5 @@
 {
-  "/404": "pages/404.html",
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/": "pages/index.html",
   "/_document": "pages/_document.js",
-  "/plan": "pages/plan.html",
-  "/posts": "pages/posts.html",
-  "/posts/debounce": "pages/posts/debounce.html",
-  "/posts/infiniteScroll": "pages/posts/infiniteScroll.html",
-  "/posts/slider": "pages/posts/slider.html"
+  "/_error": "pages/_error.js"
 }
