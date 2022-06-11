@@ -1,7 +1,12 @@
 {
+  "/404": "pages/404.html",
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/404": "pages/404.js",
-  "/posts/debounce": "pages/posts/debounce.js"
+  "/": "pages/index.html",
+  "/_document": "pages/_document.js",
+  "/plan": "pages/plan.html",
+  "/posts": "pages/posts.html",
+  "/posts/debounce": "pages/posts/debounce.html",
+  "/posts/infiniteScroll": "pages/posts/infiniteScroll.html",
+  "/posts/slider": "pages/posts/slider.html"
 }

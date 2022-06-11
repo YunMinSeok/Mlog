@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //components
-import Slider from '../../../components/section/postpage/slider/Slider';
+import Slider from '../../../components/section/postpage/slider/SliderPage';
 
 const Index = () => {
   const images = [

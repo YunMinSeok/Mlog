@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 //components
-import Debounce from '../../../components/section/postpage/debounce/debounce';
+import Debounce from '../../../components/section/postpage/debounce/DebouncePage';
+
 const Index = () => {
   return (
     <Container>
