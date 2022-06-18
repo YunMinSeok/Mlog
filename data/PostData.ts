@@ -18,7 +18,7 @@ export const postData = [
   {
     id: 'debounce_post',
     link: '/posts/debounce',
-    image: '/InfiniteScroll.png',
+    image: '/debounce.png',
     title: 'Input Debounce',
     content: 'debounce을 이용한 성능 향상 공부',
     date: '2022년 6월 11일',
