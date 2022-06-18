@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //components
-import ReverseInfiniteScroll from '../../../components/section/postpage/reverseInfiniteScroll/reverseInfiniteScrollPage';
+import ReverseInfiniteScroll from '../../../components/section/postpage/reverseInfiniteScroll/ReverseInfiniteScrollPage';
 
 const Index = () => {
   return (

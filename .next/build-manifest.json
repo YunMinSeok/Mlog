@@ -35,10 +35,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/posts.js"
     ],
-    "/posts/debounce": [
+    "/posts/reverseInfiniteScroll": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/posts/debounce.js"
+      "static/chunks/pages/posts/reverseInfiniteScroll.js"
     ]
   },
   "ampFirstPages": []

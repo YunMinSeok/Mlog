@@ -30,6 +30,14 @@ export const LoaderWrap = styled.div`
   align-items: center;
 `;
 
+export const Title = styled.h1`
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+`;
+
 export const BackButton = styled(Image)`
   transform: rotate(180deg);
   cursor: pointer;

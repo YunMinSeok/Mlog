@@ -1,17 +1,19 @@
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactLoading from 'react-loading';
 
 //styled
 import * as Styled from './ReverseInfiniteScrollStyle';
 
-const InfiniteScroll = () => {
+const ReverseInfiniteScroll = () => {
   const router = useRouter();
   const [itemList, setItemList] = useState<number[]>([
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
   ]);
   const [target, setTarget] = useState<HTMLElement | null | undefined>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const onIntersect: IntersectionObserverCallback = async (
     [entry],
@@ -23,9 +25,21 @@ const InfiniteScroll = () => {
       // 데이터를 가져오는 부분
       await new Promise((resolve) => setTimeout(resolve, 1000));
       let Items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-      setItemList((itemLists) => itemLists.concat(Items));
+      let list = [...itemList];
+      list.unshift(...Items);
+      setItemList(list);
       setIsLoading(false);
       observer.observe(entry.target);
+    }
+  };
+
+  const scrollBottom = () => {
+    if (scrollRef === null) {
+      return;
+    }
+    if (scrollRef.current !== null) {
+      scrollRef.current.scrollTop =
+        scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
     }
   };
 
@@ -44,20 +58,16 @@ const InfiniteScroll = () => {
     return () => observer && observer.disconnect();
   }, [target]);
 
+  useEffect(() => {
+    if (itemList.length > 0) {
+      console.log(1);
+      scrollBottom();
+    }
+  }, [itemList]);
+
   return (
     <>
-      <Styled.BackButton
-        onClick={() => router.back()}
-        src={'/arrow.png'}
-        alt={'arrow'}
-        width={50}
-        height={50}
-      />
-      <Styled.ItemWrap>
-        {itemList.map((item: number, index: number) => {
-          return <Styled.Item>{index + 1}</Styled.Item>;
-        })}
-      </Styled.ItemWrap>
+      <div ref={setTarget} />
       {isLoading ? (
         <Styled.LoaderWrap>
           <ReactLoading type="spin" color="#A593E0" />
@@ -65,9 +75,21 @@ const InfiniteScroll = () => {
       ) : (
         ''
       )}
-      <div ref={setTarget} />
+      <Styled.ItemWrap ref={scrollRef}>
+        {itemList.map((item: number, index: number) => {
+          return <Styled.Item key={index}>{index + 1}</Styled.Item>;
+        })}
+      </Styled.ItemWrap>
+      <Styled.BackButton
+        onClick={() => router.back()}
+        src={'/arrow.png'}
+        alt={'arrow'}
+        width={50}
+        height={50}
+      />
+      <Styled.Title>Reverse</Styled.Title>
     </>
   );
 };
 
-export default InfiniteScroll;
+export default ReverseInfiniteScroll;
