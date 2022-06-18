@@ -8,7 +8,7 @@ import * as Styled from './ReverseInfiniteScrollStyle';
 const ReverseInfiniteScroll = () => {
   const router = useRouter();
   const [itemList, setItemList] = useState<number[]>([
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+    10, 9, 8, 7, 6, 5, 4, 3, 2, 1,
   ]);
   const [target, setTarget] = useState<HTMLElement | null | undefined>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -24,9 +24,15 @@ const ReverseInfiniteScroll = () => {
       setIsLoading(true);
       // 데이터를 가져오는 부분
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      let Items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let Items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
       let list = [...itemList];
       list.unshift(...Items);
+      if (scrollRef.current !== null) {
+        const nowScrollTop = scrollRef.current.clientHeight;
+        scrollRef.current.scrollTop =
+          scrollRef.current.scrollHeight - nowScrollTop;
+      }
+
       setItemList(list);
       setIsLoading(false);
       observer.observe(entry.target);
@@ -59,15 +65,13 @@ const ReverseInfiniteScroll = () => {
   }, [target]);
 
   useEffect(() => {
-    if (itemList.length > 0) {
-      console.log(1);
+    if (scrollRef !== null) {
       scrollBottom();
     }
-  }, [itemList]);
+  }, [scrollRef]);
 
   return (
     <>
-      <div ref={setTarget} />
       {isLoading ? (
         <Styled.LoaderWrap>
           <ReactLoading type="spin" color="#A593E0" />
@@ -76,8 +80,10 @@ const ReverseInfiniteScroll = () => {
         ''
       )}
       <Styled.ItemWrap ref={scrollRef}>
+        <div ref={setTarget} />
+
         {itemList.map((item: number, index: number) => {
-          return <Styled.Item key={index}>{index + 1}</Styled.Item>;
+          return <Styled.Item key={index}>{item}</Styled.Item>;
         })}
       </Styled.ItemWrap>
       <Styled.BackButton
