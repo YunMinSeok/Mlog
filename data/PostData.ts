@@ -26,7 +26,7 @@ export const postData = [
   {
     id: 'reverseInfiniteScroll_post',
     link: '/posts/reverseInfiniteScroll',
-    image: '/InfiniteScroll.png',
+    image: '/reverseInfiniteScroll.png',
     title: 'Reverse Infinite reverse scroll',
     content: 'Intersection Observer를 이용한 역 무한 스크롤',
     date: '2022년 6월 18일',

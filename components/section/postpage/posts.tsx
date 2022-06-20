@@ -86,7 +86,7 @@ const Thumnail = styled(Image)`
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: fill;
 `;
 
 const ContentBox = styled.div`
