@@ -5,12 +5,14 @@ import styled from 'styled-components';
 
 //data
 import { postData } from '../../../data/PostData';
+//type
+import { postType } from '../../../types/postType';
 
 const Posts = () => {
   return (
     <Container>
       <PostWrap>
-        {postData.map((item) => {
+        {postData.map((item: postType) => {
           return (
             <PostBox key={item.id}>
               <Link href={item.link}>
