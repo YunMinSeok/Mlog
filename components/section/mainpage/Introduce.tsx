@@ -1,8 +1,9 @@
+import type { NextPage } from 'next';
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
-const Introduce = () => {
+const Introduce: NextPage = () => {
   return (
     <Container>
       <ContentBox>
