@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
-const Introduce: NextPage = () => {
+export const Introduce: NextPage = () => {
   return (
     <Container>
       <ContentBox>
@@ -24,8 +24,6 @@ const Introduce: NextPage = () => {
     </Container>
   );
 };
-
-export default Introduce;
 
 const Container = styled.section`
   display: flex;
