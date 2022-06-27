@@ -8,7 +8,9 @@ describe('<Introduce />', () => {
   it('renders a heading', () => {
     render(<Introduce />);
     const span = screen.getByText('This page is MinSeok develop blog.');
+    const image = screen.getByAltText('Introduce_Logo');
 
     expect(span).toBeInTheDocument();
+    expect(image).toBeInTheDocument();
   });
 });
