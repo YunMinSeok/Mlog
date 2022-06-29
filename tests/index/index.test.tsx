@@ -6,13 +6,11 @@ import { render, screen } from '@testing-library/react';
 describe('<Introduce />', () => {
   it('matches snapshot', () => {
     const utils = render(<Introduce />);
-    expect(utils.container).toMatchSnapshot();
-  });
-  it('shows the props correctly', () => {
-    const span = screen.getByText('This page is MinSeok develop blog.');
-    const image = screen.getByAltText('Introduce_Logo');
+    const testFirstTitle = screen.getByText(
+      'This page is MinSeok develop blog.',
+    );
 
-    expect(span).toBeInTheDocument();
-    expect(image).toBeInTheDocument();
+    expect(utils.container).toMatchSnapshot();
+    expect(testFirstTitle).toBeInTheDocument();
   });
 });

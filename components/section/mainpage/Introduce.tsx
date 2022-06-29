@@ -7,9 +7,11 @@ const Introduce = () => {
     <Container>
       <ContentBox>
         <p>
-          <span>This page is MinSeok develop blog. </span>
-          <span>I usally use Typescript, React, Redux.</span>
-          <span>Thanks for look</span>
+          <span id="Introduce_Title1">This page is MinSeok develop blog. </span>
+          <span id="Introduce_Title2">
+            I usally use Typescript, React, Redux.
+          </span>
+          <span id="Introduce_Title3">Thanks for look</span>
         </p>
       </ContentBox>
       <InrtoduceImgBox>

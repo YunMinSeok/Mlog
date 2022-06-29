@@ -9,13 +9,19 @@ exports[`<Introduce /> matches snapshot 1`] = `
       class="sc-gsnTZi dJOqzv"
     >
       <p>
-        <span>
+        <span
+          id="Introduce_Title1"
+        >
           This page is MinSeok develop blog. 
         </span>
-        <span>
+        <span
+          id="Introduce_Title2"
+        >
           I usally use Typescript, React, Redux.
         </span>
-        <span>
+        <span
+          id="Introduce_Title3"
+        >
           Thanks for look
         </span>
       </p>
