@@ -6,11 +6,13 @@ import { render, screen } from '@testing-library/react';
 describe('<Introduce />', () => {
   it('matches snapshot', () => {
     const utils = render(<Introduce />);
-    const testFirstTitle = screen.getByText(
-      'This page is MinSeok develop blog.',
-    );
 
     expect(utils.container).toMatchSnapshot();
-    expect(testFirstTitle).toBeInTheDocument();
+  });
+  it('shows the props correctly', () => {
+    const utils = render(<Introduce />);
+    utils.getByText('This page is MinSeok develop blog.');
+    utils.getByText('I usally use Typescript, React, Redux.');
+    utils.getByText('Thanks for look');
   });
 });
