@@ -88,7 +88,7 @@ const ReverseInfiniteScroll = () => {
       </Styled.ItemWrap>
       <Styled.BackButton
         onClick={() => router.back()}
-        src={'/arrow.png'}
+        src={'arrow.png'}
         alt={'arrow'}
         width={50}
         height={50}

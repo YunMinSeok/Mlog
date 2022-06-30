@@ -5,7 +5,7 @@ module.exports = {
       : '',
   images: {
     loader: 'imgix',
-    path: 'https://yunminseok.github.io/Mlog',
+    path: 'https://yunminseok.github.io/Mlog/',
   },
   basePath: '/Mlog',
 };

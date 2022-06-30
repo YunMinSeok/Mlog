@@ -108,7 +108,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
     <>
       <Styled.BackButton
         onClick={() => router.back()}
-        src={'/arrow.png'}
+        src={'arrow.png'}
         alt={'arrow'}
         width={50}
         height={50}
@@ -136,7 +136,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
         <Styled.PrevArrowBox>
           <Styled.PrevArrow
             onClick={clickLeft}
-            src={'/arrow.png'}
+            src={'arrow.png'}
             alt={'arrow'}
             width={50}
             height={50}
@@ -145,7 +145,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
         <Styled.NextArrowBox>
           <Styled.NextArrow
             onClick={clickRight}
-            src={'/arrow.png'}
+            src={'arrow.png'}
             alt={'arrow'}
             width={50}
             height={50}

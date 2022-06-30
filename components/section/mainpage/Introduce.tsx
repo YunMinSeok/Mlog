@@ -16,7 +16,7 @@ const Introduce = () => {
       </ContentBox>
       <InrtoduceImgBox>
         <Image
-          src={'/Introduce.png'}
+          src={'Introduce.png'}
           alt="Introduce_Logo"
           width={400}
           height={400}
