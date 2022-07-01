@@ -1,6 +1,9 @@
+//image
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
+
+import { INTRODUCE_IMAGE } from '../../../constants/image/image';
 
 const Introduce = () => {
   return (
@@ -16,7 +19,7 @@ const Introduce = () => {
       </ContentBox>
       <InrtoduceImgBox>
         <Image
-          src={'Introduce.png'}
+          src={INTRODUCE_IMAGE}
           alt="Introduce_Logo"
           width={400}
           height={400}

@@ -3,6 +3,8 @@
 import Introduce from '@components/section/mainpage/Introduce';
 import { render, screen, waitFor } from '@testing-library/react';
 
+import { INTRODUCE_IMAGE } from '../../constants/image/image';
+
 describe('<Introduce />', () => {
   const setup = () => {
     const utils = render(<Introduce />);
@@ -32,8 +34,8 @@ describe('<Introduce />', () => {
   it('uses correct src', async () => {
     const { image } = setup();
     await waitFor(() => {
-      // expect(image.getAttribute('src')).toEqual('Introduce.png');
-      expect(image).toHaveAttribute('src', '/Introduce.png');
+      expect(image).toHaveAttribute('src', INTRODUCE_IMAGE);
+      // expect(image.getAttribute('src')).toBe('/Introduce.png');
     });
   });
 });
