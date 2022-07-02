@@ -1,7 +1,7 @@
 //index test
 
 import Introduce from '@components/section/mainpage/Introduce';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { INTRODUCE_IMAGE } from '../../constants/image/image';
 
