@@ -13,7 +13,7 @@ describe('<Introduce />', () => {
       'I usally use Typescript, React, Redux.',
     );
     const thirdContent = screen.getByText('Thanks for look');
-    const image = utils.getByAltText('Introduce_Logo');
+    const image = screen.getByAltText('Introduce_Logo');
 
     return {
       utils,
@@ -33,9 +33,6 @@ describe('<Introduce />', () => {
 
   it('uses correct src', async () => {
     const { image } = setup();
-    await waitFor(() => {
-      expect(image).toHaveAttribute('src', INTRODUCE_IMAGE);
-      // expect(image.getAttribute('src')).toBe('/Introduce.png');
-    });
+    expect(image.getAttribute('src')).toBe(INTRODUCE_IMAGE.src);
   });
 });

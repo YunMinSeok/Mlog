@@ -6,6 +6,10 @@ import styled from 'styled-components';
 import { INTRODUCE_IMAGE } from '../../../constants/image/image';
 
 const Introduce = () => {
+  const loaderProp = ({ src }: { src: string }) => {
+    return src;
+  };
+
   return (
     <Container>
       <ContentBox>
@@ -19,10 +23,12 @@ const Introduce = () => {
       </ContentBox>
       <InrtoduceImgBox>
         <Image
+          loader={loaderProp}
           src={INTRODUCE_IMAGE}
           alt="Introduce_Logo"
           width={400}
           height={400}
+          priority={true}
         />
       </InrtoduceImgBox>
     </Container>
