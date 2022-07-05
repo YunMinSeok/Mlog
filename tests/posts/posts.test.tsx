@@ -15,7 +15,9 @@ describe('<Posts />', () => {
   };
   it('has content and a image', () => {
     const { image } = setup();
-    expect(image).toBeInTheDocument();
+    image.forEach((item) => {
+      expect(item).toBeInTheDocument();
+    });
   });
 
   it('uses correct src', async () => {});
