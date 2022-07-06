@@ -41,6 +41,9 @@ describe('<Posts />', () => {
     const { images, titles, contents, dates } = setup();
     postData.forEach((data, index) => {
       expect(images[index].getAttribute('src')).toBe(data.image);
+      expect(titles[index].textContent).toBe(data.title);
+      expect(contents[index].textContent).toBe(data.content);
+      expect(dates[index].textContent).toBe(data.date);
     });
   });
 });
