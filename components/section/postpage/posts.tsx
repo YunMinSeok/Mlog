@@ -9,6 +9,10 @@ import { postData } from '../../../data/PostData';
 import { postType } from '../../../types/postType';
 
 const Posts = () => {
+  const loaderProp = ({ src }: { src: string }) => {
+    return src;
+  };
+
   return (
     <Container>
       <PostWrap>
@@ -18,20 +22,28 @@ const Posts = () => {
               <Link href={item.link}>
                 <LinkBox>
                   <ThumnailContent>
-                    <Thumnail src={item.image} alt="post_image" layout="fill" />
+                    <Thumnail
+                      loader={loaderProp}
+                      src={item.image}
+                      alt="post_image"
+                      layout="fill"
+                      priority={true}
+                    />
                   </ThumnailContent>
                 </LinkBox>
               </Link>
               <ContentBox>
                 <Link href={item.link}>
                   <LinkBox>
-                    <ContentH4>{item.title}</ContentH4>
+                    <ContentH4 data-testid="post_title">{item.title}</ContentH4>
                     <ContentDescription>
-                      <ContentDescriptionP>{item.content}</ContentDescriptionP>
+                      <ContentDescriptionP data-testid="post_content">
+                        {item.content}
+                      </ContentDescriptionP>
                     </ContentDescription>
                   </LinkBox>
                 </Link>
-                <SubInfo>
+                <SubInfo data-testid="post_date">
                   <span>{item.date}</span>
                 </SubInfo>
               </ContentBox>

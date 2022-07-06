@@ -3,22 +3,44 @@
 import Posts from '@components/section/postpage/posts';
 import { render, screen } from '@testing-library/react';
 
+import { postData } from '../../data/PostData';
+
 describe('<Posts />', () => {
   const setup = () => {
     const utils = render(<Posts />);
-    const image = screen.getAllByAltText('post_image');
+    const images = screen.getAllByAltText('post_image');
+    const titles = screen.getAllByTestId('post_title');
+    const contents = screen.getAllByTestId('post_content');
+    const dates = screen.getAllByTestId('post_date');
 
     return {
       utils,
-      image,
+      images,
+      titles,
+      contents,
+      dates,
     };
   };
   it('has content and a image', () => {
-    const { image } = setup();
-    image.forEach((item) => {
-      expect(item).toBeInTheDocument();
+    const { images, titles, contents, dates } = setup();
+    images.forEach((image) => {
+      expect(image).toBeInTheDocument();
+    });
+    titles.forEach((title) => {
+      expect(title).toBeInTheDocument();
+    });
+    contents.forEach((content) => {
+      expect(content).toBeInTheDocument();
+    });
+    dates.forEach((date) => {
+      expect(date).toBeInTheDocument();
     });
   });
 
-  it('uses correct src', async () => {});
+  it('uses correct props', async () => {
+    const { images, titles, contents, dates } = setup();
+    postData.forEach((data, index) => {
+      expect(images[index].getAttribute('src')).toBe(data.image);
+    });
+  });
 });
