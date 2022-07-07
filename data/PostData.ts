@@ -39,11 +39,11 @@ export const postData = [
     date: '2022년 6월 18일',
   },
   {
-    id: 'reverseInfiniteScroll_post',
-    link: '/posts/reverseInfiniteScroll',
+    id: 'clipboard_post',
+    link: '/posts/clipBoard',
     image: REINFINITESCROLL_IMAGE,
-    title: 'Reverse Infinite reverse scroll',
-    content: 'Intersection Observer를 이용한 역 무한 스크롤',
+    title: 'ClipBoard Class Components',
+    content: 'Class형태의 클립보드 만들기!',
     date: '2022년 7월 6일',
   },
 ];
