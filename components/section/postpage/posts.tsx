@@ -59,7 +59,6 @@ const Posts = () => {
 export default Posts;
 
 const Container = styled.section`
-  height: 100vh;
   background-color: #121212;
 `;
 
