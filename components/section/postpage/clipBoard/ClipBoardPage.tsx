@@ -5,12 +5,12 @@ import React, { PureComponent, useEffect, useState } from 'react';
 import * as Styled from './ClipBoardStyle';
 
 export class ClipBoardPage extends PureComponent {
+  router = useRouter();
   render() {
-    const router = useRouter();
     return (
       <>
         <Styled.BackButton
-          onClick={() => router.back()}
+          onClick={() => this.router.back()}
           src={'arrow.png'}
           alt={'arrow'}
           width={50}
