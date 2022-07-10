@@ -14,58 +14,53 @@ const Posts = () => {
   };
 
   return (
-    <Container>
-      <PostWrap>
-        {postData.map((item: postType) => {
-          return (
-            <PostBox key={item.id}>
+    <PostWrap>
+      {postData.map((item: postType) => {
+        return (
+          <PostBox key={item.id}>
+            <Link href={item.link}>
+              <LinkBox>
+                <ThumnailContent>
+                  <Thumnail
+                    loader={loaderProp}
+                    src={item.image}
+                    alt="post_image"
+                    layout="fill"
+                    unoptimized={true}
+                    priority={true}
+                  />
+                </ThumnailContent>
+              </LinkBox>
+            </Link>
+            <ContentBox>
               <Link href={item.link}>
                 <LinkBox>
-                  <ThumnailContent>
-                    <Thumnail
-                      loader={loaderProp}
-                      src={item.image}
-                      alt="post_image"
-                      layout="fill"
-                      unoptimized={true}
-                      priority={true}
-                    />
-                  </ThumnailContent>
+                  <ContentH4 data-testid="post_title">{item.title}</ContentH4>
+                  <ContentDescription>
+                    <ContentDescriptionP data-testid="post_content">
+                      {item.content}
+                    </ContentDescriptionP>
+                  </ContentDescription>
                 </LinkBox>
               </Link>
-              <ContentBox>
-                <Link href={item.link}>
-                  <LinkBox>
-                    <ContentH4 data-testid="post_title">{item.title}</ContentH4>
-                    <ContentDescription>
-                      <ContentDescriptionP data-testid="post_content">
-                        {item.content}
-                      </ContentDescriptionP>
-                    </ContentDescription>
-                  </LinkBox>
-                </Link>
-                <SubInfo data-testid="post_date">
-                  <span>{item.date}</span>
-                </SubInfo>
-              </ContentBox>
-            </PostBox>
-          );
-        })}
-      </PostWrap>
-    </Container>
+              <SubInfo data-testid="post_date">
+                <span>{item.date}</span>
+              </SubInfo>
+            </ContentBox>
+          </PostBox>
+        );
+      })}
+    </PostWrap>
   );
 };
 
 export default Posts;
 
-const Container = styled.section`
-  background-color: #121212;
-`;
-
 const PostWrap = styled.div`
   display: flex;
   padding: 2rem;
   flex-wrap: wrap;
+  background-color: #121212;
 `;
 
 const PostBox = styled.div`

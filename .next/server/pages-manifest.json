@@ -1,14 +1,6 @@
 {
-  "/404": "pages/404.html",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/": "pages/index.html",
-  "/posts/clipBoard": "pages/posts/clipBoard.html",
-  "/posts/debounce": "pages/posts/debounce.html",
-  "/posts": "pages/posts.html",
-  "/plan": "pages/plan.html",
-  "/posts/reverseInfiniteScroll": "pages/posts/reverseInfiniteScroll.html",
-  "/posts/slider": "pages/posts/slider.html",
-  "/posts/infiniteScroll": "pages/posts/infiniteScroll.html"
+  "/posts": "pages/posts.js"
 }
