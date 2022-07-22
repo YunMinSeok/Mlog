@@ -1,11 +1,13 @@
+import { ClipBoard } from 'copy-to-clipboard-typescript';
 import { useRouter } from 'next/router';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 
 //styled
 import * as Styled from './ClipBoardStyle';
 
 const ClipBoardPage = () => {
   const router = useRouter();
+  const [value, setValue] = useState<string | undefined>();
 
   return (
     <>
@@ -17,7 +19,14 @@ const ClipBoardPage = () => {
         height={50}
       />
       <Styled.Wrap>
-        <div></div>
+        <ClipBoard text={value}>
+          <Styled.TextBox
+            value={value}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+              setValue(e.target.value)
+            }
+          ></Styled.TextBox>
+        </ClipBoard>
       </Styled.Wrap>
     </>
   );

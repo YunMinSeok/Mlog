@@ -11,3 +11,8 @@ export const Wrap = styled.div`
   padding: 50px;
   color: white;
 `;
+
+export const TextBox = styled.textarea`
+  width: 100px;
+  height: 100px;
+`;
