@@ -25,8 +25,11 @@ const ClipBoardPage = () => {
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
               setValue(e.target.value)
             }
-          ></Styled.TextBox>
+          >
+            {value}
+          </Styled.TextBox>
         </ClipBoard>
+        <Styled.TextBox></Styled.TextBox>
       </Styled.Wrap>
     </>
   );
