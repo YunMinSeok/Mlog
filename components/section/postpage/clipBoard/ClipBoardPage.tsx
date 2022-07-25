@@ -13,21 +13,22 @@ const ClipBoardPage = () => {
     <>
       <Styled.BackButton
         onClick={() => router.back()}
-        src={'arrow.png'}
+        src={'/arrow.png'}
         alt={'arrow'}
         width={50}
         height={50}
       />
       <Styled.Wrap>
+        <Styled.TextBox
+          value={value}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+            setValue(e.target.value)
+          }
+        >
+          {value}
+        </Styled.TextBox>
         <ClipBoard text={value}>
-          <Styled.TextBox
-            value={value}
-            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-              setValue(e.target.value)
-            }
-          >
-            {value}
-          </Styled.TextBox>
+          <span>click</span>
         </ClipBoard>
         <Styled.TextBox></Styled.TextBox>
       </Styled.Wrap>

@@ -12,7 +12,14 @@ export const Wrap = styled.div`
   color: white;
 `;
 
-export const TextBox = styled.textarea`
+export const ClipButton = styled.button`
   width: 100px;
-  height: 100px;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+`;
+
+export const TextBox = styled.textarea`
+  width: 500px;
+  height: 200px;
 `;
