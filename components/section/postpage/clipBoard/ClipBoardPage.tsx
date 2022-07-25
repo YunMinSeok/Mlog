@@ -8,6 +8,7 @@ import * as Styled from './ClipBoardStyle';
 const ClipBoardPage = () => {
   const router = useRouter();
   const [value, setValue] = useState<string | undefined>();
+  //here
 
   return (
     <>
