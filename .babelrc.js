@@ -1,7 +1,7 @@
 const env = require('./env-config');
 
 module.exports = {
-  presets: ['next/babel'],
+  presets: ['next/babel', '@babel/preset-react', '@babel/preset-typescript'],
   plugins: [
     [
       'styled-components',

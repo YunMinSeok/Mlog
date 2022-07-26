@@ -1,6 +1,17 @@
 {
-  "extends": ["react-app", "prettier/prettier"],
-  "plugins": ["react-hooks", "simple-import-sort", "prettier"],
+  "extends": [
+    "react-app",
+    "prettier/prettier",
+    "next/babel",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "react-hooks",
+    "@typescript-eslint",
+    "simple-import-sort",
+    "prettier"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
