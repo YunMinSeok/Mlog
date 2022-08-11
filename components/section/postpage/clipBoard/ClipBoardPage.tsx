@@ -31,7 +31,7 @@ const ClipBoardPage = () => {
         <ClipBoard text={value}>
           <span>click</span>
         </ClipBoard>
-        <Styled.TextBox></Styled.TextBox>
+        <Styled.TextBox placeholder="복사된 텍스트를 넣어주세요!"></Styled.TextBox>
       </Styled.Wrap>
     </>
   );
