@@ -3,6 +3,7 @@ import {
   INFINITESCROLL_IMAGE,
   REINFINITESCROLL_IMAGE,
   SLIDER_IMAGE,
+  CLIPBOARD_IMAGE,
 } from '../constants/image/image';
 
 export const postData = [
@@ -41,7 +42,7 @@ export const postData = [
   {
     id: 'clipboard_post',
     link: '/posts/clipBoard',
-    image: REINFINITESCROLL_IMAGE,
+    image: CLIPBOARD_IMAGE,
     title: 'ClipBoard Class Components',
     content: 'Class형태의 클립보드 만들기!',
     date: '2022년 7월 6일',

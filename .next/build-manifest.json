@@ -35,21 +35,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/posts/clipBoard.js"
     ],
-    "/posts/debounce": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/posts/debounce.js"
-    ],
-    "/posts/infiniteScroll": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/posts/infiniteScroll.js"
-    ],
-    "/posts/reverseInfiniteScroll": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/posts/reverseInfiniteScroll.js"
-    ],
     "/posts/slider": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
