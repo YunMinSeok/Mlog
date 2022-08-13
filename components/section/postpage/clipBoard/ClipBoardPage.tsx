@@ -8,13 +8,16 @@ import * as Styled from './ClipBoardStyle';
 import { ARROW_IMAGE } from '../../../../constants/image/image';
 
 const ClipBoardPage = () => {
+  const loaderProp = ({ src }: { src: string }) => {
+    return src;
+  };
   const router = useRouter();
   const [value, setValue] = useState<string | undefined>();
-  //here
 
   return (
     <>
       <Styled.BackButton
+        loader={loaderProp}
         onClick={() => router.back()}
         src={ARROW_IMAGE}
         alt={'arrow'}

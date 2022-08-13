@@ -4,8 +4,12 @@ import ReactLoading from 'react-loading';
 
 //styled
 import * as Styled from './ReverseInfiniteScrollStyle';
+import { ARROW_IMAGE } from '../../../../constants/image/image';
 
 const ReverseInfiniteScroll = () => {
+  const loaderProp = ({ src }: { src: string }) => {
+    return src;
+  };
   const router = useRouter();
   const [itemList, setItemList] = useState<number[]>([
     10, 9, 8, 7, 6, 5, 4, 3, 2, 1,
@@ -88,7 +92,8 @@ const ReverseInfiniteScroll = () => {
       </Styled.ItemWrap>
       <Styled.BackButton
         onClick={() => router.back()}
-        src={'arrow.png'}
+        loader={loaderProp}
+        src={ARROW_IMAGE}
         alt={'arrow'}
         width={50}
         height={50}

@@ -4,7 +4,12 @@ import React, { useEffect, useState } from 'react';
 //styled
 import * as Styled from './DebounceStyle';
 
+import { ARROW_IMAGE } from '../../../../constants/image/image';
+
 const Debounce = () => {
+  const loaderProp = ({ src }: { src: string }) => {
+    return src;
+  };
   const router = useRouter();
 
   //일반 change 함수
@@ -59,7 +64,8 @@ const Debounce = () => {
     <>
       <Styled.BackButton
         onClick={() => router.back()}
-        src={'arrow.png'}
+        loader={loaderProp}
+        src={ARROW_IMAGE}
         alt={'arrow'}
         width={50}
         height={50}

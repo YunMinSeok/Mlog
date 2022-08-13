@@ -3,12 +3,16 @@ import React, { useEffect, useState } from 'react';
 
 //styled
 import * as Styled from './SliderStyle';
+import { ARROW_IMAGE } from '../../../../constants/image/image';
 
 type SliderProps = {
   images: { pic: string; id: number }[];
 };
 
 const Slider: React.FC<SliderProps> = ({ images }) => {
+  const loaderProp = ({ src }: { src: string }) => {
+    return src;
+  };
   const router = useRouter();
   const imageSize = images.length;
   const moreSlide = 1;
@@ -108,7 +112,8 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
     <>
       <Styled.BackButton
         onClick={() => router.back()}
-        src={'arrow.png'}
+        loader={loaderProp}
+        src={ARROW_IMAGE}
         alt={'arrow'}
         width={50}
         height={50}
@@ -136,7 +141,8 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
         <Styled.PrevArrowBox>
           <Styled.PrevArrow
             onClick={clickLeft}
-            src={'arrow.png'}
+            loader={loaderProp}
+            src={ARROW_IMAGE}
             alt={'arrow'}
             width={50}
             height={50}
@@ -145,7 +151,8 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
         <Styled.NextArrowBox>
           <Styled.NextArrow
             onClick={clickRight}
-            src={'arrow.png'}
+            loader={loaderProp}
+            src={ARROW_IMAGE}
             alt={'arrow'}
             width={50}
             height={50}
