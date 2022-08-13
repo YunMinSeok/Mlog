@@ -19,7 +19,7 @@
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "babel-plugin-styled-components": "^2.0.7",
     "babel-plugin-transform-define": "^2.0.1",
-    "copy-to-clipboard-typescript": "^1.4.0",
+    "copy-to-clipboard-typescript": "^1.5.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.26.0",

@@ -8,13 +8,14 @@ export const BackButton = styled(Image)`
 `;
 
 export const Wrap = styled.div`
-  padding: 50px;
+  display: flex;
   color: white;
 `;
 
 export const ClipButton = styled.button`
   width: 100px;
   height: 30px;
+  margin: 20px;
   background-color: white;
   border-radius: 5px;
 `;
@@ -22,4 +23,5 @@ export const ClipButton = styled.button`
 export const TextBox = styled.textarea`
   width: 500px;
   height: 200px;
+  margin: 20px;
 `;
