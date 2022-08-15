@@ -44,7 +44,15 @@ export const postData = [
     link: '/posts/clipBoard',
     image: CLIPBOARD_IMAGE,
     title: 'ClipBoard Class Components',
-    content: 'Class형태의 클립보드 만들기!',
+    content: 'Class형태의 클립보드 라이브러리 만들기 및 적용시키기',
     date: '2022년 7월 6일',
+  },
+  {
+    id: 'sleep_post',
+    link: '/posts/clipBoard',
+    image: CLIPBOARD_IMAGE,
+    title: 'Sleep Library',
+    content: 'API 통신 하는것 처럼 보이게하는 라이브러리 만들기 및 적용시키기',
+    date: '2022년 8월 15일',
   },
 ];

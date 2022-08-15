@@ -34,11 +34,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/posts/clipBoard.js"
-    ],
-    "/posts/slider": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/posts/slider.js"
     ]
   },
   "ampFirstPages": []
