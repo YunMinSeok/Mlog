@@ -1,9 +1,12 @@
+MLOG
+나만의 메모장
+사용해보고 싶은 기술, 라이브러리 연습 및 활용 예제를 만드는 곳입니다.
+
 NextJS + TypeScript + styled-component
-<br/>
+
 CI = Jest + React-Testing-Library
-<br/>
+
 CD = GithubAction + gh-pages
-<br/>
 
 를 이용해서 만든 블로그이며 인터렉션을 중점적으로 여러가지 만드는 곳입니다.
 
