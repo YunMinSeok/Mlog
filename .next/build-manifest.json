@@ -30,11 +30,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/posts.js"
     ],
-    "/posts/debounce": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/posts/debounce.js"
-    ],
     "/posts/slider": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
