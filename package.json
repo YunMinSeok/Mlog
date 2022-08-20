@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "homepage": "https://yunminseok.github.io/Mlog",
-    "dev": "next dev",
+    "dev": "json-server --watch db.json && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
