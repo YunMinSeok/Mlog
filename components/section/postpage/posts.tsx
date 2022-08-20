@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { GetStaticProps } from 'next';
+import axios from 'axios';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -8,6 +10,7 @@ import { postData } from '../../../data/PostData';
 //type
 import { postType } from '../../../types/postType';
 
+//TODO :: 여기 데이터 받아야함 static 하게
 const Posts = () => {
   const loaderProp = ({ src }: { src: string }) => {
     return src;
@@ -55,6 +58,18 @@ const Posts = () => {
 };
 
 export default Posts;
+
+export async function getStaticProps() {
+  try {
+    const res = await axios.get('http://localhost:3000/postData');
+    console.log(res);
+    return {
+      props: { postData: res },
+    };
+  } catch (e) {
+    console.error(e);
+  }
+}
 
 const PostWrap = styled.div`
   display: flex;
