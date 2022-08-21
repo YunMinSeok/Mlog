@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { GetStaticProps } from 'next';
+import { GetStaticPropsResult, GetStaticPropsContext } from 'next';
 import axios from 'axios';
 import React from 'react';
 import styled from 'styled-components';
@@ -11,7 +11,8 @@ import { postData } from '../../../data/PostData';
 import { postType } from '../../../types/postType';
 
 //TODO :: 여기 데이터 받아야함 static 하게
-const Posts = () => {
+const Posts = ({ postList }: postType) => {
+  console.log(postList);
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };
@@ -59,16 +60,38 @@ const Posts = () => {
 
 export default Posts;
 
-export async function getStaticProps() {
-  try {
-    const res = await axios.get('http://localhost:3000/postData');
-    console.log(res);
-    return {
-      props: { postData: res },
-    };
-  } catch (e) {
-    console.error(e);
-  }
+// export async function getStaticProps() {
+//   try {
+//     const res = await axios.get<postType>('http://localhost:3000/postData');
+//     console.log(res);
+//     return {
+//       props: { postData: res },
+//     };
+//   } catch (e) {
+//     console.error(e);
+//   }
+// }
+
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
+  console.log(params);
+  const category = params || '';
+
+  const postList = await axios.get<postType>(
+    `http://localhost:3000${category}`,
+  );
+
+  return {
+    props: {
+      postList,
+    },
+  };
+};
+
+export async function getStaticPaths() {
+  return {
+    paths: ['/postData'],
+    fallback: true,
+  };
 }
 
 const PostWrap = styled.div`
