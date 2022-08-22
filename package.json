@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "homepage": "https://yunminseok.github.io/Mlog",
-    "dev": "next dev && json-server --watch db.json",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -61,7 +61,6 @@
     "jest": "^28.1.1",
     "jest-dom": "^4.0.0",
     "jest-environment-jsdom": "^28.1.1",
-    "json-server": "^0.17.0",
     "ts-jest": "^28.0.5",
     "typescript": "4.6.3"
   }

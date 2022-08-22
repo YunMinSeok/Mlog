@@ -1,25 +1,28 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { GetStaticPropsResult, GetStaticPropsContext } from 'next';
+import {
+  GetStaticPropsResult,
+  GetStaticPropsContext,
+  GetStaticProps,
+  NextPage,
+} from 'next';
 import axios from 'axios';
 import React from 'react';
 import styled from 'styled-components';
 
-//data
-import { postData } from '../../../data/PostData';
 //type
 import { postType } from '../../../types/postType';
 
 //TODO :: 여기 데이터 받아야함 static 하게
-const Posts = ({ postList }: postType) => {
-  console.log(postList);
+const Posts: NextPage<postType> = ({ postData }) => {
+  console.log(postData);
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };
 
   return (
     <PostWrap>
-      {postData.map((item: postType) => {
+      {postData?.map((item: postType) => {
         return (
           <PostBox key={item.id}>
             <Link href={item.link}>
@@ -58,41 +61,22 @@ const Posts = ({ postList }: postType) => {
   );
 };
 
-export default Posts;
-
-// export async function getStaticProps() {
-//   try {
-//     const res = await axios.get<postType>('http://localhost:3000/postData');
-//     console.log(res);
-//     return {
-//       props: { postData: res },
-//     };
-//   } catch (e) {
-//     console.error(e);
-//   }
-// }
-
-export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
-  console.log(params);
-  const category = params || '';
-
-  const postList = await axios.get<postType>(
-    `http://localhost:3000${category}`,
-  );
-
-  return {
-    props: {
-      postList,
-    },
-  };
-};
-
-export async function getStaticPaths() {
-  return {
-    paths: ['/postData'],
-    fallback: true,
-  };
+export async function getStaticProps() {
+  try {
+    const response = await axios.get<postType>(
+      'http://localhost:3000/api/postData',
+    );
+    console.log(response);
+    const postData = await response.data;
+    console.log(postData);
+    return {
+      props: { postData: postData },
+    };
+  } catch (e) {
+    console.error(e);
+  }
 }
+export default Posts;
 
 const PostWrap = styled.div`
   display: flex;
