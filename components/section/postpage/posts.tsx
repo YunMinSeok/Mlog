@@ -1,28 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  GetStaticPropsResult,
-  GetStaticPropsContext,
-  GetStaticProps,
-  NextPage,
-} from 'next';
-import axios from 'axios';
+import { NextPage } from 'next';
 import React from 'react';
 import styled from 'styled-components';
 
-//type
 import { postType } from '../../../types/postType';
 
-//TODO :: 여기 데이터 받아야함 static 하게
 const Posts: NextPage<postType> = ({ postData }) => {
-  console.log(postData);
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };
 
   return (
     <PostWrap>
-      {postData?.map((item: postType) => {
+      {postData.map((item: postType) => {
         return (
           <PostBox key={item.id}>
             <Link href={item.link}>
@@ -61,21 +52,6 @@ const Posts: NextPage<postType> = ({ postData }) => {
   );
 };
 
-export async function getStaticProps() {
-  try {
-    const response = await axios.get<postType>(
-      'http://localhost:3000/api/postData',
-    );
-    console.log(response);
-    const postData = await response.data;
-    console.log(postData);
-    return {
-      props: { postData: postData },
-    };
-  } catch (e) {
-    console.error(e);
-  }
-}
 export default Posts;
 
 const PostWrap = styled.div`

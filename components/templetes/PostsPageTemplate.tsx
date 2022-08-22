@@ -5,11 +5,14 @@ import styled from 'styled-components';
 import Header from '../header/Header';
 import Posts from '../section/postpage/posts';
 
-const PostsPageTemplate = () => {
+import { postType } from '@/types/postType';
+import { NextPage } from 'next';
+
+const PostsPageTemplate: NextPage<postType> = ({ postData }) => {
   return (
     <Container>
       <Header />
-      <Posts />
+      <Posts postData={postData} />
     </Container>
   );
 };
