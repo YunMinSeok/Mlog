@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import { postType } from '../../../types/postType';
 
-const Posts: NextPage<postType> = ({ postData }) => {
+const Posts: NextPage<postType[]> = ({ postData }) => {
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };

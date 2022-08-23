@@ -15,10 +15,11 @@ const Post: NextPage<postType> = ({ postData }) => {
 
 export async function getStaticProps() {
   try {
-    const response = await axios.get<postType>(
+    const response = await axios.get<postType[]>(
       'http://localhost:3000/api/posts',
     );
-    const postData = response.data;
+    const postData: postType[] = response.data;
+    console.log(postData);
     return {
       props: { postData: postData },
     };
