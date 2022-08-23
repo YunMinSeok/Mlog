@@ -1,11 +1,10 @@
-import { NextPage } from 'next';
 import axios from 'axios';
 //components
 import PostPage from '../../components/templetes/PostsPageTemplate';
 //type
 import { postType } from '../../types/postType';
 
-const Post: NextPage<postType> = ({ postData }) => {
+const Post = ({ postData }: { postData: postType[] }) => {
   return (
     <>
       <PostPage postData={postData} />
@@ -21,7 +20,7 @@ export async function getStaticProps() {
     const postData: postType[] = response.data;
     console.log(postData);
     return {
-      props: { postData: postData },
+      props: { postData },
     };
   } catch (e) {
     console.error(e);

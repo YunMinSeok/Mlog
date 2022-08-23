@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { NextPage } from 'next';
 import React from 'react';
 import styled from 'styled-components';
 
 import { postType } from '../../../types/postType';
 
-const Posts: NextPage<postType[]> = ({ postData }) => {
+const Posts = ({ postData }: { postData: postType[] }) => {
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };

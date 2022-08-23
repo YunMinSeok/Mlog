@@ -6,9 +6,8 @@ import Header from '../header/Header';
 import Posts from '../section/postpage/posts';
 
 import { postType } from '@/types/postType';
-import { NextPage } from 'next';
 
-const PostsPageTemplate: NextPage<postType[]> = ({ postData }) => {
+const PostsPageTemplate = ({ postData }: { postData: postType[] }) => {
   return (
     <Container>
       <Header />
