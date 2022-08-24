@@ -18,7 +18,6 @@ export async function getStaticProps() {
       'http://localhost:3000/api/posts',
     );
     const postData: postType[] = response.data;
-    console.log(postData);
     return {
       props: { postData },
     };
