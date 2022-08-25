@@ -48,12 +48,11 @@ export default function handler(
       date: '2022년 7월 6일',
     },
     {
-      id: 'sleep_post',
+      id: 'imageResize_post',
       link: '/posts/clipBoard',
       image: '/clipboard.png',
-      title: 'Sleep Library',
-      content:
-        'API 통신 하는것 처럼 보이게하는 라이브러리 만들기 및 적용시키기',
+      title: 'Image Resize',
+      content: '이미지 리사이징 만들기',
       date: '2022년 8월 15일',
     },
   ]);
