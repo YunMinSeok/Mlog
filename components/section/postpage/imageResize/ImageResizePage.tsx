@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 //styled
 import * as Styled from './ImageResizeStyle';
@@ -8,11 +8,13 @@ import { ARROW_IMAGE } from '../../../../constants/image/image';
 
 const ImageResizePage = () => {
   const [image, setImage] = useState<File | null>(null);
-
+  const [resizeImage, setResizeImage] = useState<File | null>(null);
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };
   const router = useRouter();
+
+  const handleResizeImage = () => {};
 
   return (
     <>
@@ -37,6 +39,12 @@ const ImageResizePage = () => {
         />
         <Styled.OriginImage
           image={image === null ? null : URL.createObjectURL(image)}
+        ></Styled.OriginImage>
+        <Styled.ResizeButton onClick={handleResizeImage}>
+          Do you want resize image?
+        </Styled.ResizeButton>
+        <Styled.OriginImage
+          image={resizeImage === null ? null : URL.createObjectURL(resizeImage)}
         ></Styled.OriginImage>
       </Styled.Wrap>
     </>

@@ -16,6 +16,14 @@ export const InputButton = styled.input`
   height: 20px;
 `;
 
+export const ResizeButton = styled.button`
+  width: 120px;
+  height: 50px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: gray;
+`;
+
 interface OriginImageType {
   image: String | null;
 }
