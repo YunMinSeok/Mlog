@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 //components
-import Debounce from '../../../components/section/postpage/debounce/DebouncePage';
+import ImageResize from '../../../components/section/postpage/imageResize/ImageResizePage';
 
 const Index = () => {
   return (
     <Container>
-      <Debounce />
+      <ImageResize />
     </Container>
   );
 };
