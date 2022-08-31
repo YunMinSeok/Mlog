@@ -17,7 +17,7 @@ export const InputButton = styled.input`
 `;
 
 interface OriginImageType {
-  image: String | Blob;
+  image: String | null;
 }
 
 export const OriginImage = styled.div<OriginImageType>`
@@ -26,5 +26,5 @@ export const OriginImage = styled.div<OriginImageType>`
   margin-top: 20px;
   background-color: white;
   background-image: url(${({ image }) => `${image}`});
-  background-fit: cover;
+  background-size: cover;
 `;

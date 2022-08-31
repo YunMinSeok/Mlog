@@ -36,7 +36,7 @@ const ImageResizePage = () => {
           }}
         />
         <Styled.OriginImage
-          image={URL.createObjectURL(image!)}
+          image={image === null ? null : URL.createObjectURL(image)}
         ></Styled.OriginImage>
       </Styled.Wrap>
     </>
