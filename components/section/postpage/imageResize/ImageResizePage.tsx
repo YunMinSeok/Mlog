@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 
 //styled
 import * as Styled from './ImageResizeStyle';
-
 import { ARROW_IMAGE } from '../../../../constants/image/image';
+//util
+import imageCompress from 'ts-image-compress';
 
 const ImageResizePage = () => {
   const [image, setImage] = useState<File | null>(null);
