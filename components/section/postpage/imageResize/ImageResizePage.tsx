@@ -20,7 +20,10 @@ const ImageResizePage = () => {
       return;
     }
     const resizeResult = await imageCompress(image);
-    console.log(resizeResult);
+    if (!resizeResult) {
+      return;
+    }
+    setResizeImage(resizeResult as File);
   };
 
   return (
@@ -52,12 +55,12 @@ const ImageResizePage = () => {
             Do you want resize image?
           </Styled.ResizeButton>
           <Styled.ImageInfoSection>
-            <div>Name: {image?.name}</div>
-            <div>Size: {image?.size}</div>
+            <div>Origin Name: {image?.name}</div>
+            <div>Origin Size: {image?.size}</div>
           </Styled.ImageInfoSection>
           <Styled.ImageInfoSection>
-            <div>Name: {image?.name}</div>
-            <div>Size: {image?.size}</div>
+            <div>Resize Name: {resizeImage?.name}</div>
+            <div>Resize Size: {resizeImage?.size}</div>
           </Styled.ImageInfoSection>
         </Styled.MiddleSection>
         <Styled.OriginImage
