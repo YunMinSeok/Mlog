@@ -50,7 +50,7 @@ export default function handler(
     {
       id: 'imageResize_post',
       link: '/posts/imageResize',
-      image: '/clipboard.png',
+      image: '/ResizePostImage.png',
       title: 'Image Resize',
       content: '이미지 리사이징 오픈소스로 이미지 사이즈,용량 줄이긴',
       date: '2022년 8월 15일',
