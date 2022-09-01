@@ -20,7 +20,6 @@ export const ResizeButton = styled.button`
   width: 120px;
   height: 50px;
   border-radius: 5px;
-  margin-top: 20px;
   background-color: gray;
 `;
 
@@ -35,4 +34,20 @@ export const OriginImage = styled.div<OriginImageType>`
   background-color: white;
   background-image: url(${({ image }) => `${image}`});
   background-size: cover;
+`;
+
+export const MiddleSection = styled.div`
+  display: flex;
+  margin-top: 20px;
+`;
+
+export const ImageInfoSection = styled.div`
+  display: flex;
+  color: white;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: center;
+  & > div {
+    margin-left: 10px;
+  }
 `;

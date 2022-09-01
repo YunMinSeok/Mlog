@@ -15,7 +15,13 @@ const ImageResizePage = () => {
   };
   const router = useRouter();
 
-  const handleResizeImage = () => {};
+  const handleResizeImage = async () => {
+    if (!image) {
+      return;
+    }
+    const resizeResult = await imageCompress(image);
+    console.log(resizeResult);
+  };
 
   return (
     <>
@@ -41,9 +47,19 @@ const ImageResizePage = () => {
         <Styled.OriginImage
           image={image === null ? null : URL.createObjectURL(image)}
         ></Styled.OriginImage>
-        <Styled.ResizeButton onClick={handleResizeImage}>
-          Do you want resize image?
-        </Styled.ResizeButton>
+        <Styled.MiddleSection>
+          <Styled.ResizeButton onClick={handleResizeImage}>
+            Do you want resize image?
+          </Styled.ResizeButton>
+          <Styled.ImageInfoSection>
+            <div>Name: {image?.name}</div>
+            <div>Size: {image?.size}</div>
+          </Styled.ImageInfoSection>
+          <Styled.ImageInfoSection>
+            <div>Name: {image?.name}</div>
+            <div>Size: {image?.size}</div>
+          </Styled.ImageInfoSection>
+        </Styled.MiddleSection>
         <Styled.OriginImage
           image={resizeImage === null ? null : URL.createObjectURL(resizeImage)}
         ></Styled.OriginImage>
