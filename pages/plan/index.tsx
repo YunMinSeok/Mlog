@@ -2,11 +2,7 @@
 import PostPage from '../../components/templetes/PostsPageTemplate';
 
 const Post = () => {
-  return (
-    <>
-      <PostPage />
-    </>
-  );
+  return <>{/* <PostPage /> */}</>;
 };
 
 export default Post;
