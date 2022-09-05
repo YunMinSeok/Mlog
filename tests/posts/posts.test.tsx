@@ -7,7 +7,7 @@ import { postData } from '../../data/PostData';
 
 describe('<Posts />', () => {
   const setup = () => {
-    const utils = render(<Posts />);
+    const utils = render(<Posts postData={postData} />);
     const images = screen.getAllByAltText('post_image');
     const titles = screen.getAllByTestId('post_title');
     const contents = screen.getAllByTestId('post_content');
