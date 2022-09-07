@@ -8,8 +8,8 @@ import { ARROW_IMAGE } from '../../../../constants/image/image';
 import imageCompress from 'ts-image-compress';
 
 const ImageResizePage = () => {
-  const [image, setImage] = useState<File | null>(null);
-  const [resizeImage, setResizeImage] = useState<File | null>(null);
+  const [image, setImage] = useState<File | FileList | null>(null);
+  const [resizeImage, setResizeImage] = useState<File | FileList | null>(null);
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };
@@ -40,15 +40,16 @@ const ImageResizePage = () => {
         <Styled.InputButton
           type="file"
           accept=".jpeg, .jpg, .png, .gif"
+          multiple={true}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             if (!e.target.files) {
               return;
             }
-            setImage(e.target.files[0]);
+            setImage(e.target.files);
           }}
         />
         <Styled.OriginImage
-          image={image === null ? null : URL.createObjectURL(image)}
+          image={image === null ? null : URL.createObjectURL(image[0])}
         ></Styled.OriginImage>
         <Styled.MiddleSection>
           <Styled.ResizeButton onClick={handleResizeImage}>
