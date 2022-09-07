@@ -19,11 +19,11 @@ const ImageResizePage = () => {
     if (!image) {
       return;
     }
-    const resizeResult = await imageCompress(image);
-    if (!resizeResult) {
-      return;
-    }
-    setResizeImage(resizeResult as File);
+    // const resizeResult = await imageCompress(image);
+    // if (!resizeResult) {
+    //   return;
+    // }
+    // setResizeImage(resizeResult as File);
   };
 
   return (
