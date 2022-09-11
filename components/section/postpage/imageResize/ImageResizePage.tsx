@@ -8,8 +8,8 @@ import { ARROW_IMAGE } from '../../../../constants/image/image';
 import imageCompress from 'ts-image-compress';
 
 const ImageResizePage = () => {
-  const [image, setImage] = useState<File | FileList | null>(null);
-  const [resizeImage, setResizeImage] = useState<File | FileList | null>(null);
+  const [image, setImage] = useState<File | null>(null);
+  const [resizeImage, setResizeImage] = useState<File | null>(null);
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };
@@ -19,11 +19,11 @@ const ImageResizePage = () => {
     if (!image) {
       return;
     }
-    // const resizeResult = await imageCompress(image);
-    // if (!resizeResult) {
-    //   return;
-    // }
-    // setResizeImage(resizeResult as File);
+    const resizeResult = await imageCompress(image);
+    if (!resizeResult) {
+      return;
+    }
+    setResizeImage(resizeResult as File);
   };
 
   return (
@@ -45,11 +45,11 @@ const ImageResizePage = () => {
             if (!e.target.files) {
               return;
             }
-            setImage(e.target.files);
+            setImage(e.target.files[0]);
           }}
         />
         <Styled.OriginImage
-          image={image === null ? null : URL.createObjectURL(image[0])}
+          image={image === null ? null : URL.createObjectURL(image)}
         ></Styled.OriginImage>
         <Styled.MiddleSection>
           <Styled.ResizeButton onClick={handleResizeImage}>
