@@ -19,3 +19,4 @@ CD = GithubAction + gh-pages
 3. Debounce 개념을 이용한 검색 기능 구현
 4. Intersection Observer를 이용한 역 무한 스크롤
 5. 클래스형 클립보드 라이브러리 만들기
+6. 이미지 크기 압축 관련 페이지 구현
