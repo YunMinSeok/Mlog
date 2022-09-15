@@ -10,7 +10,7 @@ import {
 export const postData = [
   {
     id: 'slider_post',
-    link: '/posts/slider',
+    link: '/Mlog/posts/slider',
     image: SLIDER_IMAGE,
     title: 'Infinite carousel slider',
     content: 'TypeScript를 이용해서 만든 무한 자동 슬라이드',
@@ -18,7 +18,7 @@ export const postData = [
   },
   {
     id: 'infiniteScroll_post',
-    link: '/posts/infiniteScroll',
+    link: '/Mlog/posts/infiniteScroll',
     image: INFINITESCROLL_IMAGE,
     title: 'Infinite reverse scroll',
     content: 'Intersection Observer를 이용한 무한 스크롤',
@@ -26,7 +26,7 @@ export const postData = [
   },
   {
     id: 'debounce_post',
-    link: '/posts/debounce',
+    link: '/Mlog/posts/debounce',
     image: DEBOUNCE_IMAGE,
     title: 'Input Debounce',
     content: 'debounce을 이용한 성능 향상 공부',
@@ -34,7 +34,7 @@ export const postData = [
   },
   {
     id: 'reverseInfiniteScroll_post',
-    link: '/posts/reverseInfiniteScroll',
+    link: '/Mlog/posts/reverseInfiniteScroll',
     image: REINFINITESCROLL_IMAGE,
     title: 'Reverse Infinite reverse scroll',
     content: 'Intersection Observer를 이용한 역 무한 스크롤',
@@ -42,7 +42,7 @@ export const postData = [
   },
   {
     id: 'clipboard_post',
-    link: '/posts/clipBoard',
+    link: '/Mlog/posts/clipBoard',
     image: CLIPBOARD_IMAGE,
     title: 'ClipBoard Class Components',
     content: 'Class형태의 클립보드 라이브러리 만들기 및 적용시키기',
@@ -50,7 +50,7 @@ export const postData = [
   },
   {
     id: 'sleep_post',
-    link: '/posts/imageResize',
+    link: '/Mlog/posts/imageResize',
     image: RESIZE_IMAGE,
     title: 'Resize Library',
     content: '이미지 리사이징으로 크기 줄이기',
