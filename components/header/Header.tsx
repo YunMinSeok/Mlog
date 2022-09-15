@@ -15,10 +15,10 @@ const Header = () => {
           <Link href="/">
             <LinkMenu>Introduce</LinkMenu>
           </Link>
-          <Link href="/posts">
+          <Link href="/Mlog/posts">
             <LinkMenu>Posts</LinkMenu>
           </Link>
-          <Link href="/plan">
+          <Link href="/Mlog/plan">
             <LinkMenu>Plan</LinkMenu>
           </Link>
         </LinkContainer>
