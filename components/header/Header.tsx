@@ -7,12 +7,12 @@ const Header = () => {
     <Container>
       <ContentContainer>
         <LogoContainer>
-          <Link href="/">
+          <Link href="/Mlog">
             <Logo>Mlog</Logo>
           </Link>
         </LogoContainer>
         <LinkContainer>
-          <Link href="/">
+          <Link href="/Mlog">
             <LinkMenu>Introduce</LinkMenu>
           </Link>
           <Link href="/Mlog/posts">
