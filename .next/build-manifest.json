@@ -30,10 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/posts/imageResize": [
+    "/posts": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/posts/imageResize.js"
+      "static/chunks/pages/posts.js"
+    ],
+    "/posts/clipBoard": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/posts/clipBoard.js"
     ]
   },
   "ampFirstPages": []
