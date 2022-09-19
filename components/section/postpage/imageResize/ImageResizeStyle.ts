@@ -43,11 +43,9 @@ export const MiddleSection = styled.div`
 
 export const ImageInfoSection = styled.div`
   display: flex;
+  margin 20px 0;
   color: white;
   flex-direction: column;
   font-size: 20px;
   justify-content: center;
-  & > div {
-    margin-left: 10px;
-  }
 `;

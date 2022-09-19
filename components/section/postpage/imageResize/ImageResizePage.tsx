@@ -48,6 +48,10 @@ const ImageResizePage = () => {
             setImage(e.target.files[0]);
           }}
         />
+        <Styled.ImageInfoSection>
+          <div>Origin Name: {image?.name}</div>
+          <div>Origin Size: {image?.size}</div>
+        </Styled.ImageInfoSection>
         <Styled.OriginImage
           image={image === null ? null : URL.createObjectURL(image)}
         ></Styled.OriginImage>
@@ -55,15 +59,11 @@ const ImageResizePage = () => {
           <Styled.ResizeButton onClick={handleResizeImage}>
             Do you want resize image?
           </Styled.ResizeButton>
-          <Styled.ImageInfoSection>
-            <div>Origin Name: {image?.name}</div>
-            <div>Origin Size: {image?.size}</div>
-          </Styled.ImageInfoSection>
-          <Styled.ImageInfoSection>
-            <div>Resize Name: {resizeImage?.name}</div>
-            <div>Resize Size: {resizeImage?.size}</div>
-          </Styled.ImageInfoSection>
         </Styled.MiddleSection>
+        <Styled.ImageInfoSection>
+          <div>Resize Name: {resizeImage?.name}</div>
+          <div>Resize Size: {resizeImage?.size}</div>
+        </Styled.ImageInfoSection>
         <Styled.OriginImage
           image={resizeImage === null ? null : URL.createObjectURL(resizeImage)}
         ></Styled.OriginImage>
