@@ -1,4 +1,16 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+
+//사용자 불러오기 임의 코드
+export const loadUser = createAsyncThunk(``, async (id, thunkApi) => {
+  try {
+    const response = await axios.get(`api/users/${id}`);
+    return response.data.data;
+  } catch (err) {
+    return err;
+    //or return thunkApi.rejectWithValue(err);
+  }
+});
 
 export interface User {
   id: number;
