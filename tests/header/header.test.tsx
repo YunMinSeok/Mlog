@@ -26,4 +26,7 @@ describe('<Introduce />', () => {
     expect(thirdLink).toBeInTheDocument();
     expect(fourthLink).toBeInTheDocument();
   });
+
+  //TODO : link 제대로 가는지 테스트 코드 작성
+  it('is true link', async () => {});
 });
