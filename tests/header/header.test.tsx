@@ -21,5 +21,9 @@ describe('<Introduce />', () => {
   };
   it('is correct link content', () => {
     const { firstLink, secondLink, thirdLink, fourthLink } = setup();
+    expect(firstLink).toBeInTheDocument();
+    expect(secondLink).toBeInTheDocument();
+    expect(thirdLink).toBeInTheDocument();
+    expect(fourthLink).toBeInTheDocument();
   });
 });
