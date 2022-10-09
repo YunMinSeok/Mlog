@@ -1,35 +1,37 @@
 //header test
 
 import Header from '@components/header/Header';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('<Introduce />', () => {
   const setup = () => {
     render(<Header />);
-    const firstLink = screen.getByText('Mlog');
-    const secondLink = screen.getByText('Introduce');
-    const thirdLink = screen.getByText('Posts');
-    const fourthLink = screen.getByText('Plan');
+    const mlogLink = screen.getByTestId('Mlog');
+    const introduceLink = screen.getByTestId('Introduce');
+    const postsLink = screen.getByTestId('Posts');
+    const planLink = screen.getByTestId('Plan');
 
     return {
-      firstLink,
-      secondLink,
-      thirdLink,
-      fourthLink,
+      mlogLink,
+      introduceLink,
+      postsLink,
+      planLink,
     };
   };
   it('is correct link content', () => {
-    const { firstLink, secondLink, thirdLink, fourthLink } = setup();
-    expect(firstLink).toBeInTheDocument();
-    expect(secondLink).toBeInTheDocument();
-    expect(thirdLink).toBeInTheDocument();
-    expect(fourthLink).toBeInTheDocument();
+    const { mlogLink, introduceLink, postsLink, planLink } = setup();
+    expect(mlogLink).toBeInTheDocument();
+    expect(introduceLink).toBeInTheDocument();
+    expect(postsLink).toBeInTheDocument();
+    expect(planLink).toBeInTheDocument();
   });
 
   it('is true link', async () => {
-    const { firstLink, secondLink, thirdLink, fourthLink } = setup();
-    console.log(firstLink);
-    const firstLinkTest = fireEvent.click(firstLink);
-    console.log(firstLinkTest);
+    const { mlogLink, introduceLink, postsLink, planLink } = setup();
+    userEvent.click(mlogLink);
+    userEvent.click(introduceLink);
+    userEvent.click(postsLink);
+    userEvent.click(planLink);
   });
 });
