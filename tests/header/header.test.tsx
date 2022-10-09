@@ -1,18 +1,17 @@
 //header test
 
 import Header from '@components/header/Header';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 describe('<Introduce />', () => {
   const setup = () => {
-    const utils = render(<Header />);
+    render(<Header />);
     const firstLink = screen.getByText('Mlog');
     const secondLink = screen.getByText('Introduce');
     const thirdLink = screen.getByText('Posts');
     const fourthLink = screen.getByText('Plan');
 
     return {
-      utils,
       firstLink,
       secondLink,
       thirdLink,
@@ -27,6 +26,10 @@ describe('<Introduce />', () => {
     expect(fourthLink).toBeInTheDocument();
   });
 
-  //TODO : link 제대로 가는지 테스트 코드 작성
-  it('is true link', async () => {});
+  it('is true link', async () => {
+    const { firstLink, secondLink, thirdLink, fourthLink } = setup();
+    console.log(firstLink);
+    const firstLinkTest = fireEvent.click(firstLink);
+    console.log(firstLinkTest);
+  });
 });

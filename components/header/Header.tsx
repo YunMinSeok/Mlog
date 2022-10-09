@@ -8,18 +8,18 @@ const Header = () => {
       <ContentContainer>
         <LogoContainer>
           <Link href="/Mlog">
-            <Logo>Mlog</Logo>
+            <Logo data-testid="Mlog">Mlog</Logo>
           </Link>
         </LogoContainer>
         <LinkContainer>
           <Link href="/Mlog">
-            <LinkMenu>Introduce</LinkMenu>
+            <LinkMenu data-testid="Introduce">Introduce</LinkMenu>
           </Link>
           <Link href="/Mlog/posts">
-            <LinkMenu>Posts</LinkMenu>
+            <LinkMenu data-testid="Posts">Posts</LinkMenu>
           </Link>
           <Link href="/Mlog/plan">
-            <LinkMenu>Plan</LinkMenu>
+            <LinkMenu data-testid="Plan">Plan</LinkMenu>
           </Link>
         </LinkContainer>
       </ContentContainer>
