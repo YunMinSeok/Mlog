@@ -3,8 +3,18 @@
 import Header from '@components/header/Header';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { useRouter } from 'next/router';
+
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
+}));
 
 describe('<Introduce />', () => {
+  const push = jest.fn();
+  useRouter.mockImplementationOnce(() => ({
+    asPath: '/',
+    push,
+  }));
   const setup = () => {
     render(<Header />);
     const mlogLink = screen.getByTestId('Mlog');
