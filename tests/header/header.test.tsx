@@ -1,6 +1,9 @@
 //header test
 
 import Header from '@components/header/Header';
+import Introduce from '@/components/section/mainpage/Introduce';
+import Posts from '@/components/section/postpage/posts';
+import Plan from '@/pages/plan';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -34,8 +37,12 @@ describe('<Introduce />', () => {
   it('is true link', async () => {
     const { mlogLink, introduceLink, postsLink, planLink } = setup();
     userEvent.click(mlogLink);
+    expect(render(<Introduce />)).toMatchSnapshot();
     userEvent.click(introduceLink);
+    expect(render(<Introduce />)).toMatchSnapshot();
     userEvent.click(postsLink);
+    expect(render(<Posts />)).toMatchSnapshot();
     userEvent.click(planLink);
+    expect(render(<Plan />)).toMatchSnapshot();
   });
 });
