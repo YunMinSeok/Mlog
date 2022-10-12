@@ -8,11 +8,11 @@ import { ARROW_IMAGE } from '../../../../constants/image/image';
 import { ImageCompress } from 'ts-image-compress';
 
 const ImageResizePage = () => {
-  const [image, setImage] = useState<File | null>(null);
-  const [resizeImage, setResizeImage] = useState<File | null>(null);
   const loaderProp = ({ src }: { src: string }) => {
     return src;
   };
+  const [image, setImage] = useState<File | null>(null);
+  const [resizeImage, setResizeImage] = useState<File | null>(null);
   const router = useRouter();
 
   const handleResizeImage = async () => {
