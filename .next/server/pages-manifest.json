@@ -1,16 +1,8 @@
 {
-  "/404": "pages/404.html",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
+  "/posts": "pages/posts.js",
   "/api/posts": "pages/api/posts.js",
-  "/plan": "pages/plan.html",
-  "/posts/debounce": "pages/posts/debounce.html",
-  "/posts/clipBoard": "pages/posts/clipBoard.html",
-  "/posts/imageResize": "pages/posts/imageResize.html",
-  "/posts/infiniteScroll": "pages/posts/infiniteScroll.html",
-  "/posts/slider": "pages/posts/slider.html",
-  "/posts/reverseInfiniteScroll": "pages/posts/reverseInfiniteScroll.html",
-  "/": "pages/index.html",
-  "/posts": "pages/posts.js"
+  "/404": "pages/404.js"
 }
