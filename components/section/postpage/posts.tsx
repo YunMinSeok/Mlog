@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { postType } from '../../../types/postType';
-import { loaderProp } from '@/utils/loaderProp';
+import { loaderProp } from '../../../utils/loaderProp';
 
 const Posts = ({ postData }: { postData: postType[] }) => {
   return (
