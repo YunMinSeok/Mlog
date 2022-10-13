@@ -4,15 +4,13 @@ import React, { useEffect, useState } from 'react';
 //styled
 import * as Styled from './SliderStyle';
 import { ARROW_IMAGE } from '../../../../constants/image/image';
+import { loaderProp } from '../../../../utils/loaderProp';
 
 type SliderProps = {
   images: { pic: string; id: number }[];
 };
 
 const Slider: React.FC<SliderProps> = ({ images }) => {
-  const loaderProp = ({ src }: { src: string }) => {
-    return src;
-  };
   const router = useRouter();
   const imageSize = images.length;
   const moreSlide = 1;

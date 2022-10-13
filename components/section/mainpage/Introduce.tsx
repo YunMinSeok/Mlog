@@ -4,12 +4,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { INTRODUCE_IMAGE } from '../../../constants/image/image';
+import { loaderProp } from '../../../utils/loaderProp';
 
 const Introduce = () => {
-  const loaderProp = ({ src }: { src: string }) => {
-    return src;
-  };
-
   return (
     <Container>
       <ContentBox>

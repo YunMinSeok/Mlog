@@ -5,11 +5,9 @@ import ReactLoading from 'react-loading';
 //styled
 import * as Styled from './ReverseInfiniteScrollStyle';
 import { ARROW_IMAGE } from '../../../../constants/image/image';
+import { loaderProp } from '../../../../utils/loaderProp';
 
 const ReverseInfiniteScroll = () => {
-  const loaderProp = ({ src }: { src: string }) => {
-    return src;
-  };
   const router = useRouter();
   const [itemList, setItemList] = useState<number[]>([
     10, 9, 8, 7, 6, 5, 4, 3, 2, 1,

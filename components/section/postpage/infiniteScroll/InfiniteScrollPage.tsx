@@ -5,11 +5,9 @@ import ReactLoading from 'react-loading';
 //styled
 import * as Styled from './InfiniteScrollStyle';
 import { ARROW_IMAGE } from '../../../../constants/image/image';
+import { loaderProp } from '../../../../utils/loaderProp';
 
 const InfiniteScroll = () => {
-  const loaderProp = ({ src }: { src: string }) => {
-    return src;
-  };
   const router = useRouter();
   const [itemList, setItemList] = useState<number[]>([
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,

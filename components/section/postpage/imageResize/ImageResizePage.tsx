@@ -6,11 +6,9 @@ import * as Styled from './ImageResizeStyle';
 import { ARROW_IMAGE } from '../../../../constants/image/image';
 //util
 import { ImageCompress } from 'ts-image-compress';
+import { loaderProp } from '../../../../utils/loaderProp';
 
 const ImageResizePage = () => {
-  const loaderProp = ({ src }: { src: string }) => {
-    return src;
-  };
   const [image, setImage] = useState<File | null>(null);
   const [resizeImage, setResizeImage] = useState<File | null>(null);
   const router = useRouter();

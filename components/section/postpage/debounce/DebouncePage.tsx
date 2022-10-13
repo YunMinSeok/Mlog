@@ -5,11 +5,9 @@ import React, { useEffect, useState } from 'react';
 import * as Styled from './DebounceStyle';
 
 import { ARROW_IMAGE } from '../../../../constants/image/image';
+import { loaderProp } from '../../../../utils/loaderProp';
 
 const Debounce = () => {
-  const loaderProp = ({ src }: { src: string }) => {
-    return src;
-  };
   const router = useRouter();
 
   //일반 change 함수
