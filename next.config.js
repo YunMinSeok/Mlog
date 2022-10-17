@@ -1,8 +1,8 @@
 module.exports = {
   assetPrefix:
     process.env.NODE_ENV === 'production'
-      ? process.env.PRODUCTION_PATH
-      : process.env.LOCAL_PATH,
+      ? 'https://yunminseok.github.io/Mlog'
+      : '',
   images: {
     loader: 'akamai',
     path: '',
