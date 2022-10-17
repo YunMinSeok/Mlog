@@ -7,18 +7,18 @@ const Header = () => {
     <Container>
       <ContentContainer>
         <LogoContainer>
-          <Link href="/Mlog">
+          <Link href={process.env.PATH!}>
             <Logo data-testid="Mlog">Mlog</Logo>
           </Link>
         </LogoContainer>
         <LinkContainer>
-          <Link href="/Mlog">
+          <Link href={process.env.PATH!}>
             <LinkMenu data-testid="Introduce">Introduce</LinkMenu>
           </Link>
-          <Link href="/Mlog/posts">
+          <Link href={process.env.PATH + '/posts'}>
             <LinkMenu data-testid="Posts">Posts</LinkMenu>
           </Link>
-          <Link href="/Mlog/plan">
+          <Link href={process.env.PATH + '/plan'}>
             <LinkMenu data-testid="Plan">Plan</LinkMenu>
           </Link>
         </LinkContainer>
