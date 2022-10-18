@@ -15,10 +15,10 @@ const Header = () => {
           <Link href={process.env.PATH!}>
             <LinkMenu data-testid="Introduce">Introduce</LinkMenu>
           </Link>
-          <Link href={process.env.PATH + '/posts'}>
+          <Link href={process.env.PATH! + '/posts'}>
             <LinkMenu data-testid="Posts">Posts</LinkMenu>
           </Link>
-          <Link href={process.env.PATH + '/plan'}>
+          <Link href={process.env.PATH! + '/plan'}>
             <LinkMenu data-testid="Plan">Plan</LinkMenu>
           </Link>
         </LinkContainer>
