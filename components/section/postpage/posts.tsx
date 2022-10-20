@@ -22,6 +22,7 @@ const Posts = ({ postData }: { postData: postType[] }) => {
                     layout="fill"
                     unoptimized={true}
                     priority={true}
+                    placeholder="blur"
                   />
                 </ThumnailContent>
               </LinkBox>
