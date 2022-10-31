@@ -54,6 +54,7 @@ const InfiniteScroll = () => {
         src={ARROW_IMAGE}
         alt={'arrow'}
         width={50}
+        unoptimized={true}
         height={50}
       />
       <Styled.ItemWrap>

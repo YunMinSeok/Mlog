@@ -95,6 +95,7 @@ const ReverseInfiniteScroll = () => {
         alt={'arrow'}
         width={50}
         height={50}
+        unoptimized={true}
       />
       <Styled.Title>Reverse</Styled.Title>
     </>

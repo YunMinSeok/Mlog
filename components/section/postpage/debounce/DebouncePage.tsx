@@ -65,6 +65,7 @@ const Debounce = () => {
         loader={loaderProp}
         src={ARROW_IMAGE}
         alt={'arrow'}
+        unoptimized={true}
         width={50}
         height={50}
       />

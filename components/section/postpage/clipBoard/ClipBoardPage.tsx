@@ -18,6 +18,7 @@ const ClipBoardPage = () => {
         loader={loaderProp}
         onClick={() => router.back()}
         src={ARROW_IMAGE}
+        unoptimized={true}
         alt={'arrow'}
         width={50}
         height={50}

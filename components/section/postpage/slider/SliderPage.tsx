@@ -115,6 +115,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
         alt={'arrow'}
         width={50}
         height={50}
+        unoptimized={true}
       />
       <Styled.SliderBox
         onMouseDown={onMouseDown}
@@ -144,6 +145,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
             alt={'arrow'}
             width={50}
             height={50}
+            unoptimized={true}
           />
         </Styled.PrevArrowBox>
         <Styled.NextArrowBox>
@@ -154,6 +156,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
             alt={'arrow'}
             width={50}
             height={50}
+            unoptimized={true}
           />
         </Styled.NextArrowBox>
       </Styled.SliderBox>

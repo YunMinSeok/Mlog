@@ -19,7 +19,6 @@ const Posts = ({ postData }: { postData: postType[] }) => {
                     loader={loaderProp}
                     src={item.image}
                     alt="post_image"
-                    layout="fill"
                     unoptimized={true}
                     priority={true}
                     placeholder="blur"
