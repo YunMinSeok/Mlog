@@ -18,7 +18,7 @@ const Introduce = () => {
           <span id="Introduce_Title3">Thanks for look</span>
         </p>
       </ContentBox>
-      <InrtoduceImgBox>
+      <div>
         <Image
           loader={loaderProp}
           src={INTRODUCE_IMAGE}
@@ -28,7 +28,7 @@ const Introduce = () => {
           priority={true}
           unoptimized={true}
         />
-      </InrtoduceImgBox>
+      </div>
     </Container>
   );
 };
@@ -56,5 +56,3 @@ const ContentBox = styled.div`
     }
   }
 `;
-
-const InrtoduceImgBox = styled.div``;
