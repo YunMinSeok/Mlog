@@ -1,4 +1,4 @@
-type StaticImageData = {
+export type StaticImageData = {
   src: string;
   height: number;
   width: number;

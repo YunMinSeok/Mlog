@@ -1,6 +1,6 @@
 //image
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { INTRODUCE_IMAGE } from '../../../constants/image/image';
