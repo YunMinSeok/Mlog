@@ -79,7 +79,6 @@ const LinkBox = styled.a`
 const ThumnailContent = styled.div`
   position: relative;
   width: 100%;
-  padding-top: 52.19206680584551%;
 `;
 
 const Thumnail = styled(Image)`
