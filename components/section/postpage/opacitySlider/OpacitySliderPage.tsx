@@ -16,10 +16,6 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
   const imageSize = images.length;
   const moreSlide = 1;
 
-  const [mouseDownClientX, setMouseDownClientX] = useState<number>(0);
-  const [mouseUpClientX, setMouseUpClientX] = useState<number>(0);
-  const [cursorOn, setCursorOn] = useState<boolean>(false);
-
   const [imageIndex, setImageIndex] = useState<number>(0);
 
   const [translateValue, setTranslateValue] = useState<number>(0);
@@ -32,13 +28,6 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
     }
   };
 
-  const moveLeft = (): void => {
-    if (translateValue !== 0) {
-      setTranslateValue((prev) => prev - 70);
-    } else {
-      setTranslateValue(70 * (images.length - 1));
-    }
-  };
   let slides = setSlides();
   //복제 슬라이드
   function setSlides() {
@@ -65,36 +54,6 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
     return index;
   }
 
-  //슬라이드 이벤트
-  const clickRight = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-    moveRight();
-  };
-  const clickLeft = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-    moveLeft();
-  };
-
-  //드래그 이벤트
-  const onMouseDown = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-    setMouseDownClientX(e.clientX);
-    setCursorOn(true);
-  };
-  const onMouseUp = (e: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-    setMouseUpClientX(e.clientX);
-    setCursorOn(false);
-  };
-
-  //드래그 이벤트 부분
-  useEffect(() => {
-    const dragSpace = Math.abs(mouseDownClientX - mouseUpClientX);
-    if (mouseDownClientX !== 0) {
-      if (mouseUpClientX < mouseDownClientX && dragSpace > 100) {
-        moveRight();
-      } else if (mouseUpClientX > mouseDownClientX && dragSpace > 100) {
-        moveLeft();
-      }
-    }
-  }, [mouseUpClientX]);
-
   //자동슬라이드 부분
   useEffect(() => {
     setImageIndex(translateValue / 70);
@@ -118,11 +77,7 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
         height={50}
         unoptimized={true}
       />
-      <Styled.SliderBox
-        onMouseDown={onMouseDown}
-        onMouseUp={onMouseUp}
-        cursorOn={cursorOn}
-      >
+      <Styled.SliderBox>
         <Styled.ImageBox
           translateValue={translateValue !== 0 ? translateValue : null}
         >
@@ -138,35 +93,7 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
             );
           })}
         </Styled.ImageBox>
-        <Styled.PrevArrowBox>
-          <Styled.PrevArrow
-            onClick={clickLeft}
-            loader={loaderProp}
-            src={ARROW_IMAGE}
-            alt={'arrow'}
-            width={50}
-            height={50}
-            unoptimized={true}
-          />
-        </Styled.PrevArrowBox>
-        <Styled.NextArrowBox>
-          <Styled.NextArrow
-            onClick={clickRight}
-            loader={loaderProp}
-            src={ARROW_IMAGE}
-            alt={'arrow'}
-            width={50}
-            height={50}
-            unoptimized={true}
-          />
-        </Styled.NextArrowBox>
       </Styled.SliderBox>
-      <Styled.DotBox>
-        {images.map((picture) => {
-          return <Styled.Dot key={picture.id}></Styled.Dot>;
-        })}
-        <Styled.CurrentDot imageIndex={imageIndex}></Styled.CurrentDot>
-      </Styled.DotBox>
     </>
   );
 };
