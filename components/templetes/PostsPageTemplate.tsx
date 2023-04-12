@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Header from '../header/Header';
 import Posts from '../section/postpage/posts';
 
-import { postType } from '@/types/postType';
+import { postType } from '@/src/types/postType';
 
 const PostsPageTemplate = ({ postData }: { postData: postType[] }) => {
   return (

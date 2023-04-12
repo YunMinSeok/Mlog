@@ -6,7 +6,7 @@ import Posts from '@/components/section/postpage/posts';
 import Plan from '@/pages/plan';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { postData } from '../../data/PostData';
+import { postData } from '../../src/data/PostData';
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn(),

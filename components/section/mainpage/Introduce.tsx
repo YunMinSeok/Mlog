@@ -3,8 +3,8 @@ import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
-import { INTRODUCE_IMAGE } from '../../../constants/image/image';
-import { loaderProp } from '../../../utils/loaderProp';
+import { INTRODUCE_IMAGE } from '../../../src/image/image';
+import { loaderProp } from '../../../src/utils/loaderProp';
 
 const Introduce = () => {
   return (

@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 
 //styled
 import * as Styled from './OpacitySliderStyle';
-import { ARROW_IMAGE } from '../../../../constants/image/image';
-import { loaderProp } from '../../../../utils/loaderProp';
+import { ARROW_IMAGE } from '../../../../src/image/image';
+import { loaderProp } from '../../../../src/utils/loaderProp';
 
 interface OpacitySliderType {
   images: Array<{ pic: string; id: number }>;

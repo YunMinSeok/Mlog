@@ -3,7 +3,7 @@
 import Posts from '@components/section/postpage/posts';
 import { render, screen } from '@testing-library/react';
 
-import { postData } from '../../data/PostData';
+import { postData } from '../../src/data/PostData';
 
 describe('<Posts />', () => {
   const setup = () => {

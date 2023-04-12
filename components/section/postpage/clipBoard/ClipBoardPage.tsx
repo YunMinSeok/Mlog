@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 //styled
 import * as Styled from './ClipBoardStyle';
 
-import { ARROW_IMAGE } from '../../../../constants/image/image';
-import { loaderProp } from '../../../../utils/loaderProp';
+import { ARROW_IMAGE } from '../../../../src/image/image';
+import { loaderProp } from '../../../../src/utils/loaderProp';
 
 const ClipBoardPage = () => {
   const router = useRouter();

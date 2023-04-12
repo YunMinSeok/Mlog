@@ -3,7 +3,7 @@
 import Introduce from '@components/section/mainpage/Introduce';
 import { render, screen } from '@testing-library/react';
 
-import { INTRODUCE_IMAGE } from '../../constants/image/image';
+import { INTRODUCE_IMAGE } from '../../src/image/image';
 
 describe('<Introduce />', () => {
   const setup = () => {

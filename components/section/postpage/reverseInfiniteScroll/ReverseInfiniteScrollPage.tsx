@@ -4,8 +4,8 @@ import ReactLoading from 'react-loading';
 
 //styled
 import * as Styled from './ReverseInfiniteScrollStyle';
-import { ARROW_IMAGE } from '../../../../constants/image/image';
-import { loaderProp } from '../../../../utils/loaderProp';
+import { ARROW_IMAGE } from '../../../../src/image/image';
+import { loaderProp } from '../../../../src/utils/loaderProp';
 
 const ReverseInfiniteScroll = () => {
   const router = useRouter();

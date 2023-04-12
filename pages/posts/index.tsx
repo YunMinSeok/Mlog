@@ -2,7 +2,7 @@ import axios from 'axios';
 //components
 import PostPage from '../../components/templetes/PostsPageTemplate';
 //type
-import { postType } from '../../types/postType';
+import { postType } from '../../src/types/postType';
 
 const Post = ({ postData }: { postData: postType[] }) => {
   return (

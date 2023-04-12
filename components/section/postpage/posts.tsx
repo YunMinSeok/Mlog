@@ -3,8 +3,8 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
-import { postType } from '../../../types/postType';
-import { loaderProp } from '../../../utils/loaderProp';
+import { postType } from '../../../src/types/postType';
+import { loaderProp } from '../../../src/utils/loaderProp';
 
 const Posts = ({ postData }: { postData: postType[] }) => {
   return (

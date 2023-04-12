@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 //styled
 import * as Styled from './SliderStyle';
-import { ARROW_IMAGE } from '../../../../constants/image/image';
-import { loaderProp } from '../../../../utils/loaderProp';
+import { ARROW_IMAGE } from '../../../../src/image/image';
+import { loaderProp } from '../../../../src/utils/loaderProp';
 
 type SliderProps = {
   images: { pic: string; id: number }[];
