@@ -16,11 +16,13 @@ type SliderImageProps = {
 };
 
 export const ImageBox = styled.div`
-  display: flex;
+  position: relative;
   transition: opacity 2s ease-in-out;
 `;
 
 export const SliderImage = styled.img<SliderImageProps>`
+  position: absolute;
+  top: 0;
   width: 70vw;
   object-fit: cover;
   object-position: center center;
