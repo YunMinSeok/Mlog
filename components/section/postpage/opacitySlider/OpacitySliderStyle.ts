@@ -8,6 +8,7 @@ export const SliderBox = styled.div`
   max-width: 70vw;
   height: 500px;
   overflow: hidden;
+  transform: opacity 0.5 ease-in-out;
 `;
 
 type ImageBoxProps = {

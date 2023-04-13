@@ -61,6 +61,8 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
       moveRight();
     }, 3000);
 
+    console.log(imageInterval);
+
     return () => {
       clearInterval(imageInterval);
     };
