@@ -11,20 +11,20 @@ export const SliderBox = styled.div`
   transform: opacity 0.5 ease-in-out;
 `;
 
-type ImageBoxProps = {
-  translateValue: number | null;
+type SliderImageProps = {
+  opacity: number;
 };
 
-export const ImageBox = styled.div<ImageBoxProps>`
+export const ImageBox = styled.div`
   display: flex;
-  transition: 1s;
-  transform: ${({ translateValue }) => `translateX(-${translateValue}vw)`};
+  transition: opacity 2s ease-in-out;
 `;
 
-export const SliderImage = styled.img`
+export const SliderImage = styled.img<SliderImageProps>`
   width: 70vw;
   object-fit: cover;
   object-position: center center;
+  opacity: ${({ opacity }) => opacity};
 `;
 
 export const BackButton = styled(Image)`

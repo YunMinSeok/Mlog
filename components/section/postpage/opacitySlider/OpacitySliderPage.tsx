@@ -28,6 +28,9 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
     }
   };
 
+  // opacity 관련 함수
+  const handleOpacity = (): void => {};
+
   let slides = setSlides();
   //복제 슬라이드
   function setSlides() {
@@ -41,17 +44,6 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
     }
 
     return [...addedFront, ...images, ...addedLast];
-  }
-
-  function getItemIndex(index: number) {
-    index -= moreSlide;
-    if (index < 0) {
-      index += imageSize;
-    } else if (index >= imageSize) {
-      index -= imageSize;
-    }
-
-    return index;
   }
 
   //자동슬라이드 부분
@@ -80,17 +72,14 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
         unoptimized={true}
       />
       <Styled.SliderBox>
-        <Styled.ImageBox
-          translateValue={translateValue !== 0 ? translateValue : null}
-        >
+        <Styled.ImageBox>
           {slides.map((picture, idx) => {
-            const itemIndex = getItemIndex(idx);
-
             return (
               <Styled.SliderImage
                 key={picture.id + idx}
-                src={images[itemIndex].pic}
+                src={picture.pic}
                 alt={'background' + idx}
+                opacity={0}
               />
             );
           })}
