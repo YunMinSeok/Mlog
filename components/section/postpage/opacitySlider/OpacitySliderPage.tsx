@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 //styled
 import * as Styled from './OpacitySliderStyle';
@@ -12,53 +12,29 @@ interface OpacitySliderType {
 }
 
 const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
+  const imageRef = useRef([]);
   const router = useRouter();
   const imageSize = images.length;
-  const moreSlide = 1;
 
   const [imageIndex, setImageIndex] = useState<number>(0);
 
-  const [translateValue, setTranslateValue] = useState<number>(0);
-
-  const moveRight = (): void => {
-    if (translateValue !== 70 * (images.length - 1)) {
-      setTranslateValue((prev) => prev + 70);
-    } else {
-      setTranslateValue(0);
-    }
-  };
-
   // opacity 관련 함수
-  const handleOpacity = (): void => {};
-
-  let slides = setSlides();
-  //복제 슬라이드
-  function setSlides() {
-    let addedFront = [];
-    let addedLast = [];
-    var index = 0;
-    while (index < moreSlide) {
-      addedLast.push(images[index % images.length]);
-      addedFront.unshift(images[images.length - 1 - (index % images.length)]);
-      index++;
-    }
-
-    return [...addedFront, ...images, ...addedLast];
-  }
+  const handleOpacity = (): void => {
+    setImageIndex((prevState) => prevState + 1);
+    var image = document.getElementById('image');
+    console.log(imageRef.current[0]);
+  };
 
   //자동슬라이드 부분
   useEffect(() => {
-    setImageIndex(translateValue / 70);
     const imageInterval = setInterval(() => {
-      moveRight();
+      handleOpacity();
     }, 3000);
-
-    console.log(imageInterval);
 
     return () => {
       clearInterval(imageInterval);
     };
-  }, [translateValue]);
+  }, [imageIndex]);
 
   return (
     <>
@@ -73,13 +49,14 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
       />
       <Styled.SliderBox>
         <Styled.ImageBox>
-          {slides.map((picture, idx) => {
+          {images.map((picture, idx) => {
             return (
               <Styled.SliderImage
+                ref={imageRef.current[idx]}
                 key={picture.id + idx}
                 src={picture.pic}
                 alt={'background' + idx}
-                opacity={0}
+                opacity={idx === 0 ? '1' : '0'}
               />
             );
           })}
