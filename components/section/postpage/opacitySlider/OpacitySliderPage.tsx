@@ -12,7 +12,7 @@ interface OpacitySliderType {
 }
 
 const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
-  const imageRef = useRef([]);
+  const imageRef = useRef<HTMLImageElement[]>([]);
   const router = useRouter();
   const imageSize = images.length;
 
@@ -20,9 +20,13 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
 
   // opacity 관련 함수
   const handleOpacity = (): void => {
-    setImageIndex((prevState) => prevState + 1);
-    var image = document.getElementById('image');
-    console.log(imageRef.current[0]);
+    if (imageIndex === imageSize - 1) {
+      setImageIndex(0);
+    } else {
+      setImageIndex((prevState) => prevState + 1);
+    }
+    imageRef.current[imageIndex].style.opacity = '0';
+    imageRef.current[imageIndex + 1].style.opacity = '1';
   };
 
   //자동슬라이드 부분
@@ -50,9 +54,10 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
       <Styled.SliderBox>
         <Styled.ImageBox>
           {images.map((picture, idx) => {
+            console.log(imageRef.current[idx]);
             return (
               <Styled.SliderImage
-                ref={imageRef.current[idx]}
+                ref={(el) => (imageRef.current[idx] = el as HTMLImageElement)}
                 key={picture.id + idx}
                 src={picture.pic}
                 alt={'background' + idx}
