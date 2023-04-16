@@ -16,17 +16,17 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
   const router = useRouter();
   const imageSize = images.length;
 
-  const [imageIndex, setImageIndex] = useState<number>(0);
+  const imageIndex = useRef<number>(0);
 
   // opacity 관련 함수
   const handleOpacity = (): void => {
-    if (imageIndex === imageSize - 1) {
-      setImageIndex(0);
+    imageRef.current[imageIndex.current].style.opacity = '0';
+    if (imageIndex.current === imageSize - 1) {
+      imageIndex.current = 0;
     } else {
-      setImageIndex((prevState) => prevState + 1);
+      imageIndex.current += 1;
     }
-    imageRef.current[imageIndex].style.opacity = '0';
-    imageRef.current[imageIndex + 1].style.opacity = '1';
+    imageRef.current[imageIndex.current].style.opacity = '1';
   };
 
   //자동슬라이드 부분
@@ -54,7 +54,6 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
       <Styled.SliderBox>
         <Styled.ImageBox>
           {images.map((picture, idx) => {
-            console.log(imageRef.current[idx]);
             return (
               <Styled.SliderImage
                 ref={(el) => (imageRef.current[idx] = el as HTMLImageElement)}

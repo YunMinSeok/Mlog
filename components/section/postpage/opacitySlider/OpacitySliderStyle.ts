@@ -17,7 +17,6 @@ type SliderImageProps = {
 
 export const ImageBox = styled.div`
   position: relative;
-  transition: opacity 2s ease-in-out;
 `;
 
 export const SliderImage = styled.img<SliderImageProps>`
@@ -27,6 +26,7 @@ export const SliderImage = styled.img<SliderImageProps>`
   object-fit: cover;
   object-position: center center;
   opacity: ${({ opacity }) => opacity};
+  transition: all 1s;
 `;
 
 export const BackButton = styled(Image)`
