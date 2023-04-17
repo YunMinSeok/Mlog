@@ -79,15 +79,15 @@ const LinkBox = styled.a`
 const ThumnailContent = styled.div`
   position: relative;
   width: 100%;
+  height: 200px;
+  overflow: hidden;
 `;
 
 const Thumnail = styled(Image)`
   position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  display: block;
+  top: 0 !important;
+  margin: 0 !important;
+  min-height: 200px !important;
   object-fit: fill;
 `;
 
