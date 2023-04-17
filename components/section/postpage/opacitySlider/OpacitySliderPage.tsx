@@ -60,7 +60,7 @@ const OpacitySliderPage: NextPage<OpacitySliderType> = ({ images }) => {
                 key={picture.id + idx}
                 src={picture.pic}
                 alt={'background' + idx}
-                opacity={idx === 0 ? '1' : '0'}
+                opacity={idx === 0 ? 1 : 0}
               />
             );
           })}
