@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 //styled
 import * as Styled from './OpacitySliderStyle';
