@@ -5,6 +5,7 @@ import {
   SLIDER_IMAGE,
   CLIPBOARD_IMAGE,
   RESIZE_IMAGE,
+  OPACITYSLIDER_IMAGE,
 } from '../image/image';
 
 export const postData = [
@@ -60,7 +61,7 @@ export const postData = [
   {
     id: 'opacity_slider_post',
     link: process.env.PATH + '/posts/opacitySlider',
-    image: RESIZE_IMAGE,
+    image: OPACITYSLIDER_IMAGE,
     title: 'Opacity Slider',
     content: 'slider 훅 만들기',
     date: '2023년 4월 12일',
