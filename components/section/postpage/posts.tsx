@@ -51,22 +51,21 @@ const Posts = ({ postData }: { postData: postType[] }) => {
 export default Posts;
 
 const PostWrap = styled.div`
-  display: flex;
   padding: 2rem;
-  flex-wrap: wrap;
   background-color: #121212;
 `;
 
 const PostBox = styled.div`
-  width: 18rem;
+  display: inline-block;
+  width: 23%;
   background: #1e1e1e;
   border-radius: 4px;
   box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
   transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
   margin: 1rem;
   overflow: hidden;
-  display: flex;
   flex-direction: column;
+  vertical-align: top;
 `;
 
 const LinkBox = styled.a`
