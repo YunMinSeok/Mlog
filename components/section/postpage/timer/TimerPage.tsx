@@ -9,6 +9,12 @@ import * as Styled from './TimerPageStyle';
 
 const TimerPage = () => {
   const router = useRouter();
+  const timeFormat = (time: number) => {
+    const m = Math.floor(time / 60).toString();
+    let s = (time % 60).toString();
+    if (s.length === 1) s = `0${s}`;
+    return `${m}:${s}`;
+  };
   return (
     <>
       <Styled.BackButton
