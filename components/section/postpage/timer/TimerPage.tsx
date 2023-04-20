@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 // components
@@ -8,6 +9,7 @@ import { loaderProp } from '../../../../src/utils/loaderProp';
 import * as Styled from './TimerPageStyle';
 
 const TimerPage = () => {
+  const [time, setTime] = useState(179);
   const router = useRouter();
   const timeFormat = (time: number) => {
     const m = Math.floor(time / 60).toString();
@@ -15,6 +17,12 @@ const TimerPage = () => {
     if (s.length === 1) s = `0${s}`;
     return `${m}:${s}`;
   };
+  useEffect(() => {
+    if (time > 0) {
+      const Counter = setInterval(() => {}, 1000);
+      return () => clearInterval(Counter);
+    }
+  }, [time]);
   return (
     <>
       <Styled.BackButton
