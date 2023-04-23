@@ -9,7 +9,7 @@ import { loaderProp } from '../../../../src/utils/loaderProp';
 import * as Styled from './TimerPageStyle';
 
 const TimerPage = () => {
-  const [time, setTime] = useState(179);
+  const [time, setTime] = useState(180);
   const router = useRouter();
   const timeFormat = (time: number) => {
     const m = Math.floor(time / 60).toString();
@@ -20,7 +20,7 @@ const TimerPage = () => {
   useEffect(() => {
     if (time > 0) {
       const Counter = setInterval(() => {
-        setTime(gap);
+        setTime(time - 1);
       }, 1000);
       return () => clearInterval(Counter);
     }
