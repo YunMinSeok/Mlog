@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-export const SliderBox = styled.div`
+export const TimerBox = styled.div`
   position: relative;
   display: flex;
   margin: 0 auto;
@@ -9,24 +9,12 @@ export const SliderBox = styled.div`
   height: 500px;
   overflow: hidden;
   transform: opacity 0.5 ease-in-out;
-`;
-
-type SliderImageProps = {
-  opacity: number;
-};
-
-export const ImageBox = styled.div`
-  position: relative;
-`;
-
-export const SliderImage = styled.img<SliderImageProps>`
-  position: absolute;
-  top: 0;
-  width: 70vw;
-  object-fit: cover;
-  object-position: center center;
-  opacity: ${({ opacity }) => opacity};
-  transition: all 1s;
+  p {
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 50px;
+    align-self: center;
+  }
 `;
 
 export const BackButton = styled(Image)`

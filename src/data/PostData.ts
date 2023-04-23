@@ -57,7 +57,6 @@ export const postData = [
     content: '이미지 리사이징으로 크기 줄이기',
     date: '2022년 8월 15일',
   },
-
   {
     id: 'opacity_slider_post',
     link: process.env.PATH + '/posts/opacitySlider',
@@ -65,5 +64,13 @@ export const postData = [
     title: 'Opacity Slider',
     content: 'slider 훅 만들기',
     date: '2023년 4월 12일',
+  },
+  {
+    id: 'timer_post',
+    link: process.env.PATH + '/posts/timer',
+    image: OPACITYSLIDER_IMAGE,
+    title: 'Timer',
+    content: 'timer 훅 만들기',
+    date: '2023년 4월 23일',
   },
 ];

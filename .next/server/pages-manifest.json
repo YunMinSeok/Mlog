@@ -2,7 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/posts/opacitySlider": "pages/posts/opacitySlider.js",
-  "/posts": "pages/posts.js",
-  "/api/posts": "pages/api/posts.js"
+  "/posts/timer": "pages/posts/timer.js"
 }

@@ -19,7 +19,9 @@ const TimerPage = () => {
   };
   useEffect(() => {
     if (time > 0) {
-      const Counter = setInterval(() => {}, 1000);
+      const Counter = setInterval(() => {
+        setTime(gap);
+      }, 1000);
       return () => clearInterval(Counter);
     }
   }, [time]);
@@ -34,6 +36,9 @@ const TimerPage = () => {
         height={50}
         unoptimized={true}
       />
+      <Styled.TimerBox>
+        <p>{timeFormat(time)}</p>
+      </Styled.TimerBox>
     </>
   );
 };

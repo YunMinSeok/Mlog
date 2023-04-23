@@ -25,15 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/posts": [
+    "/posts/timer": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/posts.js"
-    ],
-    "/posts/opacitySlider": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/posts/opacitySlider.js"
+      "static/chunks/pages/posts/timer.js"
     ]
   },
   "ampFirstPages": []
