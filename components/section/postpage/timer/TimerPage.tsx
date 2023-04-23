@@ -11,13 +11,24 @@ import { UseTimer } from '@/src/hook/useTimer';
 
 const TimerPage = () => {
   const router = useRouter();
+  const [time, setTime] = useState(3);
+
   const [isTimeStart, setIsTimeStart] = useState(false);
   const [isTimeOver, setIsTimeOver] = useState(false);
   const handleTimer = () => {
+    if (time === 0) {
+      setTime(3);
+    }
     setIsTimeStart(!isTimeStart);
   };
 
-  const { time } = UseTimer(10, isTimeStart, setIsTimeOver);
+  const { formatTime } = UseTimer(
+    time,
+    setTime,
+    isTimeStart,
+    setIsTimeStart,
+    setIsTimeOver,
+  );
 
   return (
     <>
@@ -31,7 +42,7 @@ const TimerPage = () => {
         unoptimized={true}
       />
       <Styled.TimerBox>
-        <p>{time}</p>
+        <p>{formatTime}</p>
         <button onClick={handleTimer}>
           {isTimeStart ? '타이머 멈추기' : '타이머 시작하기'}
         </button>
