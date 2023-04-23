@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 
-export const UseTimer = (timeValue: number, isStart: boolean) => {
+export const UseTimer = (
+  timeValue: number,
+  isStart: boolean,
+  setIsTimeOver: React.Dispatch<React.SetStateAction<boolean>>,
+) => {
   const [time, setTime] = useState(timeValue);
   const timeFormat = (time: number) => {
     const m = Math.floor(time / 60).toString();
@@ -19,6 +23,8 @@ export const UseTimer = (timeValue: number, isStart: boolean) => {
         setTime(time - 1);
       }, 1000);
       return () => clearInterval(Counter);
+    } else {
+      setIsTimeOver((prevValue) => !prevValue);
     }
   }, [time, isStart]);
 

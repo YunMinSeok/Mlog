@@ -12,11 +12,12 @@ import { UseTimer } from '@/src/hook/useTimer';
 const TimerPage = () => {
   const router = useRouter();
   const [isTimeStart, setIsTimeStart] = useState(false);
+  const [isTimeOver, setIsTimeOver] = useState(false);
   const handleTimer = () => {
     setIsTimeStart(!isTimeStart);
   };
 
-  const { time } = UseTimer(180, isTimeStart);
+  const { time } = UseTimer(10, isTimeStart, setIsTimeOver);
 
   return (
     <>
