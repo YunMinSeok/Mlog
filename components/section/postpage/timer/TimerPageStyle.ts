@@ -4,16 +4,25 @@ import styled from 'styled-components';
 export const TimerBox = styled.div`
   position: relative;
   display: flex;
-  margin: 0 auto;
-  max-width: 70vw;
   height: 500px;
+  margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
   overflow: hidden;
-  transform: opacity 0.5 ease-in-out;
+
   p {
     margin: 0 auto;
     color: #ffffff;
     font-size: 50px;
-    align-self: center;
+  }
+  button {
+    width: 100px;
+    height: 40px;
+    margin: 20px auto 0 auto;
+    background-color: gray;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
   }
 `;
 

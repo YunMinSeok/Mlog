@@ -7,24 +7,17 @@ import { ARROW_IMAGE } from '../../../../src/image/image';
 import { loaderProp } from '../../../../src/utils/loaderProp';
 //styled
 import * as Styled from './TimerPageStyle';
+import { UseTimer } from '@/src/hook/useTimer';
 
 const TimerPage = () => {
-  const [time, setTime] = useState(180);
   const router = useRouter();
-  const timeFormat = (time: number) => {
-    const m = Math.floor(time / 60).toString();
-    let s = (time % 60).toString();
-    if (s.length === 1) s = `0${s}`;
-    return `${m}:${s}`;
+  const [isTimeStart, setIsTimeStart] = useState(false);
+  const handleTimer = () => {
+    setIsTimeStart(!isTimeStart);
   };
-  useEffect(() => {
-    if (time > 0) {
-      const Counter = setInterval(() => {
-        setTime(time - 1);
-      }, 1000);
-      return () => clearInterval(Counter);
-    }
-  }, [time]);
+
+  const { time } = UseTimer(180, isTimeStart);
+
   return (
     <>
       <Styled.BackButton
@@ -37,7 +30,10 @@ const TimerPage = () => {
         unoptimized={true}
       />
       <Styled.TimerBox>
-        <p>{timeFormat(time)}</p>
+        <p>{time}</p>
+        <button onClick={handleTimer}>
+          {isTimeStart ? '타이머 멈추기' : '타이머 시작하기'}
+        </button>
       </Styled.TimerBox>
     </>
   );
