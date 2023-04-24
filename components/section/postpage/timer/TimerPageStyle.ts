@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-export const TimerBox = styled.div`
+interface TimerBoxType {
+  isTimeOver: boolean;
+}
+
+export const TimerBox = styled.div<TimerBoxType>`
   position: relative;
   display: flex;
   height: 500px;
@@ -12,7 +16,9 @@ export const TimerBox = styled.div`
 
   p {
     margin: 0 auto;
-    color: #ffffff;
+    color: ${({ isTimeOver }) => {
+      isTimeOver ? 'red' : '#ffffff';
+    }}
     font-size: 50px;
   }
   button {

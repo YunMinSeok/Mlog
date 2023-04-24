@@ -41,7 +41,7 @@ const TimerPage = () => {
         height={50}
         unoptimized={true}
       />
-      <Styled.TimerBox>
+      <Styled.TimerBox isTimeOver={isTimeOver}>
         <p>{formatTime}</p>
         <button onClick={handleTimer}>
           {isTimeStart ? '타이머 멈추기' : '타이머 시작하기'}
