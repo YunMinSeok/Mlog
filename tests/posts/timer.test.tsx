@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { render, screen, cleanup } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
@@ -31,5 +32,16 @@ describe('타이머 페이지 테스트', () => {
     await userEvent.click(timerButton);
 
     expect(timerButton).toHaveTextContent('타이머 멈추기');
+  });
+
+  // 4. hook을 직접 컨트롤 하여 테스트
+  test('update state from false to true when toggle is called', () => {
+    const [time, setTime] = useState(60);
+    const [isTimeStart, setIsTimeStart] = useState(false);
+    const [isTimeOver, setIsTimeOver] = useState(false);
+    const { result } = renderHook(() =>
+      UseTimer(time, setTime, isTimeStart, setIsTimeStart, setIsTimeOver),
+    );
+    expect(result.current.formatTime).toBe('60');
   });
 });

@@ -13,7 +13,6 @@ import * as Styled from './TimerPageStyle';
 const TimerPage = () => {
   const router = useRouter();
   const [time, setTime] = useState(3);
-
   const [isTimeStart, setIsTimeStart] = useState(false);
   const [isTimeOver, setIsTimeOver] = useState(false);
   const handleTimer = () => {
