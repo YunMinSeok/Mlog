@@ -2,8 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/posts": "pages/api/posts.js",
-  "/posts": "pages/posts.js",
-  "/404": "pages/404.js",
   "/posts/timer": "pages/posts/timer.js"
 }

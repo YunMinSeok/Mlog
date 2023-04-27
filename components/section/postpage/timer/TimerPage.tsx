@@ -5,9 +5,10 @@ import { useRouter } from 'next/router';
 import { ARROW_IMAGE } from '../../../../src/image/image';
 //util
 import { loaderProp } from '../../../../src/utils/loaderProp';
+//hook
+import { UseTimer } from '@/src/hook/useTimer';
 //styled
 import * as Styled from './TimerPageStyle';
-import { UseTimer } from '@/src/hook/useTimer';
 
 const TimerPage = () => {
   const router = useRouter();
