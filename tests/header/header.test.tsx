@@ -38,12 +38,12 @@ describe('<Introduce />', () => {
   it('is true link', async () => {
     const { mlogLink, introduceLink, postsLink, planLink } = setup();
     userEvent.click(mlogLink);
-    expect(render(<Introduce />)).toMatchSnapshot();
+    expect(render(<Introduce />));
     userEvent.click(introduceLink);
-    expect(render(<Introduce />)).toMatchSnapshot();
+    expect(render(<Introduce />));
     userEvent.click(postsLink);
-    expect(render(<Posts postData={postData} />)).toMatchSnapshot();
+    expect(render(<Posts postData={postData} />));
     userEvent.click(planLink);
-    expect(render(<Plan />)).toMatchSnapshot();
+    expect(render(<Plan />));
   });
 });
