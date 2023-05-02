@@ -1,13 +1,8 @@
-import { useState } from 'react';
 import { render, screen, cleanup } from '@testing-library/react';
-import { renderHook, act } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
 
 // components
 import TimerPage from '../../components/section/postpage/timer/TimerPage';
-
-//hook
-import { UseTimer } from '@/src/hook/useTimer';
 
 describe('타이머 페이지 테스트', () => {
   // 1. 렌더링 테스트
@@ -32,6 +27,9 @@ describe('타이머 페이지 테스트', () => {
     // 타이머 시작하기
     await userEvent.click(timerButton);
 
+    await new Promise((r) => setTimeout(r, 3000));
+
     expect(timerButton).toHaveTextContent('타이머 멈추기');
+    expect(screen.getByText('0:01')).toBeInTheDocument();
   });
 });
