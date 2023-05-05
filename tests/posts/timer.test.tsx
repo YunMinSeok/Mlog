@@ -47,5 +47,8 @@ describe('타이머 페이지 테스트', () => {
     const { result } = renderHook(() =>
       UseTimer(timer, setTimer, isStart, setIsTimeStart, setIsTimeOver),
     );
+    act(() => {
+      result.current.setIsOpen(true);
+    });
   });
 });
