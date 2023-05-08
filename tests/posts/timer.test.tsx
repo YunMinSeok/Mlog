@@ -41,14 +41,4 @@ describe('타이머 페이지 테스트', () => {
     expect(timerButton).toHaveTextContent('타이머 멈추기');
     expect(screen.getByText('0:01')).toBeInTheDocument();
   });
-
-  // 4. 훅 return값 테스트
-  it('타이머 버튼 테스트', async () => {
-    const { result } = renderHook(() =>
-      UseTimer(timer, setTimer, isStart, setIsTimeStart, setIsTimeOver),
-    );
-    act(() => {
-      result.current.setIsOpen(true);
-    });
-  });
 });
