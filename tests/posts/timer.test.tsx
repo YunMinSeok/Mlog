@@ -1,18 +1,11 @@
 import { render, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderHook, act } from '@testing-library/react-hooks';
 import { useState } from 'react';
 
 // components
 import TimerPage from '../../components/section/postpage/timer/TimerPage';
 
-// hook
-import { UseTimer } from '@/src/hook/useTimer';
-
 describe('타이머 페이지 테스트', () => {
-  const [timer, setTimer] = useState(60);
-  const [isStart, setIsTimeStart] = useState(false);
-  const [isTimeOver, setIsTimeOver] = useState(false);
   // 1. 렌더링 테스트
   beforeEach(() => {
     render(<TimerPage />);
