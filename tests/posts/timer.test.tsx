@@ -1,6 +1,5 @@
 import { render, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useState } from 'react';
 
 // components
 import TimerPage from '../../components/section/postpage/timer/TimerPage';
