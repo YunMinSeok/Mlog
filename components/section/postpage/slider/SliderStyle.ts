@@ -37,14 +37,20 @@ export const BackButton = styled(Image)`
   -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #fff);
 `;
 
-export const PrevArrowBox = styled.div`
+export const ArrowBox = styled.div`
   position: absolute;
-  top: 45%;
-`;
-export const NextArrowBox = styled.div`
-  position: absolute;
-  top: 45%;
-  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 8px;
+  right: 0px;
+  bottom: 26px;
+  width: 76px;
+  height: 28px;
+  border-radius: 14.3px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-right: 20px;
 `;
 
 export const PrevArrow = styled(Image)`
@@ -56,70 +62,14 @@ export const NextArrow = styled(Image)`
   cursor: pointer;
 `;
 
-export const DotBox = styled.ul`
-  position: absolute;
-  display: flex;
-  left: 50%;
-  top: 57%;
-  transform: translateX(-50%);
-`;
-
-export const Dot = styled.li`
-  position: relative;
-  flex: 0 1 auto;
-  width: 30px;
-  height: 3px;
-  margin: 0 3px;
-  text-indent: -999px;
-  background-color: rgba(255, 255, 255, 0.5);
-  &::before {
-    position: absolute;
-    top: -10px;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 10px;
-    content: '';
-  }
-  &::after {
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 10px;
-    content: '';
-  }
-`;
-type CurrentDotProps = {
-  imageIndex: number;
-};
-export const CurrentDot = styled.li<CurrentDotProps>`
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 30px;
-  height: 3px;
-  margin: 0 3px;
-  background-color: rgba(255, 255, 255, 1);
-  &::before {
-    position: absolute;
-    top: -10px;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 10px;
-    content: '';
-  }
-  &::after {
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 10px;
-    content: '';
-  }
-  transform: ${({ imageIndex }) => `translate(${imageIndex * 36}px,-50%)`};
-  transition: transform 0.5s;
+export const DotBox = styled.div`
+  font-size: 10px;
+  color: white;
+  text-overflow: ellipsis;
+  text-align: left;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+  line-height: 1.5;
 `;

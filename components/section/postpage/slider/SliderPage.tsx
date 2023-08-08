@@ -128,44 +128,29 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
             );
           })}
         </Styled.ImageBox>
-        <Styled.PrevArrowBox>
+        <Styled.ArrowBox>
           <Styled.PrevArrow
             onClick={clickLeft}
             loader={loaderProp}
             src={ARROW_IMAGE}
             alt={'arrow'}
-            width={50}
-            height={50}
-            unoptimized={true}
-          />
-        </Styled.PrevArrowBox>
-
-        <Styled.NextArrowBox>
-          <Styled.BackButton
-            onClick={() => router.back()}
-            loader={loaderProp}
-            src={ARROW_IMAGE}
-            alt={'arrow'}
-            width={50}
-            height={50}
+            width={10}
+            height={10}
             unoptimized={true}
           />
           <Styled.DotBox>
-            {images.map((picture, idx) => {
-              return <Styled.Dot key={picture.id}></Styled.Dot>;
-            })}
-            <Styled.CurrentDot imageIndex={imageIndex}></Styled.CurrentDot>
+            {imageIndex}/{images.length}
           </Styled.DotBox>
           <Styled.NextArrow
             onClick={clickRight}
             loader={loaderProp}
             src={ARROW_IMAGE}
             alt={'arrow'}
-            width={50}
-            height={50}
+            width={10}
+            height={10}
             unoptimized={true}
           />
-        </Styled.NextArrowBox>
+        </Styled.ArrowBox>
       </Styled.SliderBox>
     </>
   );
