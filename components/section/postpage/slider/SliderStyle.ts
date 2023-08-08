@@ -54,15 +54,18 @@ export const ArrowBox = styled.div`
 `;
 
 export const PrevArrow = styled(Image)`
+  opacity: 0.3;
   transform: rotate(180deg);
   cursor: pointer;
 `;
 
 export const NextArrow = styled(Image)`
+  opacity: 0.3;
   cursor: pointer;
 `;
 
 export const DotBox = styled.div`
+  margin: 0 10px;
   font-size: 10px;
   color: white;
   text-overflow: ellipsis;

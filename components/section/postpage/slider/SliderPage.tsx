@@ -139,7 +139,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
             unoptimized={true}
           />
           <Styled.DotBox>
-            {imageIndex}/{images.length}
+            {imageIndex + 1}/{images.length}
           </Styled.DotBox>
           <Styled.NextArrow
             onClick={clickRight}
