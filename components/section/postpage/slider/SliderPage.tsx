@@ -108,15 +108,6 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   return (
     <>
-      <Styled.BackButton
-        onClick={() => router.back()}
-        loader={loaderProp}
-        src={ARROW_IMAGE}
-        alt={'arrow'}
-        width={50}
-        height={50}
-        unoptimized={true}
-      />
       <Styled.SliderBox
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}
@@ -148,7 +139,23 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
             unoptimized={true}
           />
         </Styled.PrevArrowBox>
+
         <Styled.NextArrowBox>
+          <Styled.BackButton
+            onClick={() => router.back()}
+            loader={loaderProp}
+            src={ARROW_IMAGE}
+            alt={'arrow'}
+            width={50}
+            height={50}
+            unoptimized={true}
+          />
+          <Styled.DotBox>
+            {images.map((picture, idx) => {
+              return <Styled.Dot key={picture.id}></Styled.Dot>;
+            })}
+            <Styled.CurrentDot imageIndex={imageIndex}></Styled.CurrentDot>
+          </Styled.DotBox>
           <Styled.NextArrow
             onClick={clickRight}
             loader={loaderProp}
@@ -160,12 +167,6 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
           />
         </Styled.NextArrowBox>
       </Styled.SliderBox>
-      <Styled.DotBox>
-        {images.map((picture, idx) => {
-          return <Styled.Dot key={picture.id}></Styled.Dot>;
-        })}
-        <Styled.CurrentDot imageIndex={imageIndex}></Styled.CurrentDot>
-      </Styled.DotBox>
     </>
   );
 };
