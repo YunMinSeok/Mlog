@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //components
-import Slider from '../../../components/section/postpage/slider/SliderPage';
+import InfiniteLoopCarouselSlider from '../../../components/section/postpage/InfiniteLoopCarouselSlider/InfiniteLoopCarouselSlider';
 
 const Index = () => {
   const images = [
@@ -15,7 +15,7 @@ const Index = () => {
 
   return (
     <Container>
-      <Slider images={images} />
+      <InfiniteLoopCarouselSlider images={images} />
     </Container>
   );
 };

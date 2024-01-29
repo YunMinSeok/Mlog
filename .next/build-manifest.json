@@ -35,6 +35,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/posts.js"
     ],
+    "/posts/loopCarouselSlider": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/posts/loopCarouselSlider.js"
+    ],
     "/posts/slider": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

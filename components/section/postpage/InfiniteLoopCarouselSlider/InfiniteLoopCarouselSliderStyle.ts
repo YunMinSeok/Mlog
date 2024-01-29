@@ -9,7 +9,7 @@ export const SliderBox = styled.div<SliderBoxProps>`
   position: relative;
   display: flex;
   margin: 0 auto;
-  max-width: 70vw;
+  max-width: 500px;
   height: 500px;
   overflow: hidden;
   cursor: ${({ cursorOn }) => cursorOn && 'pointer'};
@@ -22,11 +22,12 @@ type ImageBoxProps = {
 export const ImageBox = styled.div<ImageBoxProps>`
   display: flex;
   transition: 1s;
-  transform: ${({ translateValue }) => `translateX(-${translateValue}vw)`};
+  transform: ${({ translateValue }) => `translateX(-${translateValue}px)`};
 `;
 
 export const SliderImage = styled.img`
-  width: 70vw;
+  width: 500px;
+  height: 500px;
   object-fit: cover;
   object-position: center center;
 `;

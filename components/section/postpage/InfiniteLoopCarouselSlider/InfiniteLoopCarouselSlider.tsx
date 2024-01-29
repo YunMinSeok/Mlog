@@ -1,17 +1,17 @@
-import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 //styled
-import * as Styled from './index';
+import * as Styled from './InfiniteLoopCarouselSliderStyle';
 import { ARROW_IMAGE } from '../../../../src/image/image';
 import { loaderProp } from '../../../../src/utils/loaderProp';
 
-type SliderProps = {
+type InfiniteLoopCarouselSliderProps = {
   images: { pic: string; id: number }[];
 };
 
-const Slider: React.FC<SliderProps> = ({ images }) => {
-  const router = useRouter();
+const InfiniteLoopCarouselSlider: React.FC<InfiniteLoopCarouselSliderProps> = ({
+  images,
+}) => {
   const imageSize = images.length;
   const moreSlide = 1;
 
@@ -24,8 +24,8 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
   const [translateValue, setTranslateValue] = useState<number>(0);
 
   const moveRight = (): void => {
-    if (translateValue !== 70 * (images.length - 1)) {
-      setTranslateValue((prev) => prev + 70);
+    if (translateValue !== 500 * (images.length - 1)) {
+      setTranslateValue((prev) => prev + 500);
     } else {
       setTranslateValue(0);
     }
@@ -33,12 +33,13 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   const moveLeft = (): void => {
     if (translateValue !== 0) {
-      setTranslateValue((prev) => prev - 70);
+      setTranslateValue((prev) => prev - 500);
     } else {
-      setTranslateValue(70 * (images.length - 1));
+      setTranslateValue(500 * (images.length - 1));
     }
   };
   let slides = setSlides();
+
   //복제 슬라이드
   function setSlides() {
     let addedFront = [];
@@ -96,7 +97,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   //자동슬라이드 부분
   useEffect(() => {
-    setImageIndex(translateValue / 70);
+    setImageIndex(translateValue / 500);
     const imageInterval = setInterval(() => {
       moveRight();
     }, 3000);
@@ -156,4 +157,4 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
   );
 };
 
-export default Slider;
+export default InfiniteLoopCarouselSlider;
