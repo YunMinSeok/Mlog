@@ -73,4 +73,12 @@ export const postData = [
     content: 'timer 훅 만들기',
     date: '2023년 4월 23일',
   },
+  {
+    id: 'infinite loop carousel slider',
+    link: process.env.PATH + '/posts/loopCarouselSlider',
+    image: SLIDER_IMAGE,
+    title: 'Infinite Loop Carousel Slider',
+    content: '무한 반복 Carousel slider 만들기',
+    date: '2024년 1월 29일',
+  },
 ];
